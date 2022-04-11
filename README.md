@@ -1,0 +1,2 @@
+# Cheatsheet
+Cosas copypaste
