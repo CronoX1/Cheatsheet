@@ -34,10 +34,17 @@ Cliente
 Linux
 ```
 script /dev/null -c bash
-(ctrl+z)
+```
+```
 stty raw -echo ;fg
+```
+```
 reset xterm
+```
+```
 export TERM=xterm
+```
+```
 export SHELL=bash
 ```
 
