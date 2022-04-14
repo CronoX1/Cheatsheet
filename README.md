@@ -55,7 +55,7 @@ export SHELL=bash
 wfuzz
 
 ```
-wfuzz -c --hc=404 -t 200 -w /usr/share/seclist/Discovery/DNS/subdomains-top1million-5000.txt -H "Host: FUZZ.dominio.ext" url
+wfuzz -c --hc=404 -t 200 -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt -H "Host: FUZZ.dominio.ext" url
 ```
 Gobuster
 
