@@ -48,6 +48,15 @@ export TERM=xterm
 export SHELL=bash
 ```
 
+## Enumeracion
+
+# Directory Listing & subdomain discovering
+
+wfuzz
+
+```
+wfuzz -c --hc=404 -t 200 -w /usr/share/seclist/Discovery/DNS/subdomains-top1million-5000.txt -H "Host: FUZZ.dominio.ext" url
+```
 
 
 
