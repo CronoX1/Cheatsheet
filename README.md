@@ -48,9 +48,9 @@ export TERM=xterm
 export SHELL=bash
 ```
 
-## Enumeracion
+# Enumeracion
 
-# Directory Listing & subdomain discovering
+## Directory Listing & subdomain discovering
 
 wfuzz
 
