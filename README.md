@@ -63,4 +63,9 @@ Gobuster
 gobuster vhost -u url -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt
 ```
 
+# Active Directory (AD)
 
+Kerbrute
+```
+kerbrute -users userlist.txt -dc-ip IP -domain domain.local
+```
