@@ -66,6 +66,12 @@ gobuster vhost -u url -w /usr/share/seclists/Discovery/DNS/subdomains-top1millio
 # Active Directory (AD)
 
 Kerbrute
+
 ```
 kerbrute -users userlist.txt -dc-ip IP -domain domain.local
+```
+ASREPRoasting
+
+```
+GetNPUsers.py -dc-ip IP domain.local/user
 ```
