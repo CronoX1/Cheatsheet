@@ -95,3 +95,9 @@ SMB Relay
 
 ```
 responder -I  NETINTERFACE rdw
+```
+Domain Host Discovery
+
+```
+crackmapexec smb network/address
+```
