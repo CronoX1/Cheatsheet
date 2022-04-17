@@ -1,4 +1,4 @@
-# Cheatsheet
+# Hacker Cheatsheet
 Cosas copypaste
 
 # Reverse Shells
