@@ -119,5 +119,5 @@ crackmapexec smb network/address -u users -p passwords --ntds vss
 Userenum with RPC
 
 ```
-rpcclient -U 'vaca.com\administrador%P@ssword01' 192.168.1.10 -c 'enumdomusers'
+rpcclient -U 'domain.local\user%password' IP -c 'enumdomusers'
 ```
