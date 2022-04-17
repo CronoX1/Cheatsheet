@@ -106,4 +106,3 @@ Domain Host Discovery
 ```
 crackmapexec smb network/address
 ```
-NTLM Relay
