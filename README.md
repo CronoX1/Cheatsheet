@@ -126,3 +126,11 @@ Descripcion usuarios with RPC
 ```
 for rid in $(rpcclient -U 'dominio.local\user%password' IP -c 'enumdomusers' | grep -oP '\[.*?\]' | grep -v '0x'| tr -d '[]'); do echo -e "\n[+] Para el RID $rid:\n";  rpcclient -U 'dominio.local\user%password' IP -c "queryuser $rid" | grep -E -i "user name|description" ;done
 ```
+ldapdomaindump
+
+```
+service apache2 start
+```
+```
+ldapdomaindump -u 'domain.local\user' -p 'password' targetIP
+```
