@@ -54,7 +54,7 @@ Database (BBDD, DB) enumeration (sustituir el numero correspondiente del último
 UNION SELECT 1,2,...
 ```
 
-### In-band
+### In-band or Error Based
 
 Tables enumeration
 ```
