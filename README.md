@@ -42,7 +42,7 @@ RCE .aspx
 https://github.com/tennc/webshell/blob/master/fuzzdb-webshell/asp/cmd.aspx
 ```
 
-Shell
+Shell PHP
 ```
 wget https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php
 ```
