@@ -49,7 +49,7 @@ wget https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/ph
 
 ## SQL Injection
 
-Injección (sustituir el numero correspondiente de la última columna por 'database()' para saber el nombre de la BBDD)
+Database (BBDD, DB) enumeration (sustituir el numero correspondiente del último valor por 'database()' para saber el nombre de la BBDD)
 ```
 UNION SELECT 1,2,...
 ```
