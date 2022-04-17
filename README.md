@@ -4,9 +4,9 @@ Cosas copypaste
 # Web
 
 ## Enumeracion
-## Directory Listing & subdomain discovering
+### Directory Listing & subdomain discovering
 
-### wfuzz
+#### wfuzz
 
 Subdomaing Discovering
 
@@ -18,7 +18,7 @@ Directory Listing
 ```
 wfuzz -c --hc=404 -t 200 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt http://Domain-or-IP/FUZZ
 ```
-### Gobuster
+#### Gobuster
 
 Subdomaing Discovering
 
