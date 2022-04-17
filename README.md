@@ -103,10 +103,6 @@ Injección
 ```
 UNION SELECT SLEEP(5),2,...; - --
 ```
-Database enumeration
-```
- UNION SELECT SLEEP(5),2 where database() like '%'; - --
-```
 
 # Powershell
 
