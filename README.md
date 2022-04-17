@@ -6,7 +6,7 @@ Cosas copypaste
 ## Enumeracion
 ### Directory Listing & subdomain discovering
 
-#### wfuzz
+#### Wfuzz
 
 Subdomaing Discovering
 
