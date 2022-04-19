@@ -23,7 +23,10 @@ Host Discovery (ICMP scan)
 ```
 wget https://raw.githubusercontent.com/CronoX1/Host-Discovery/main/Host-Discovery.py
 ```
-
+Remote Port Tunneling
+```
+socat TCP-LISTEN:LISTENNING_PORT,fork sctp:REMOTE_IP:REMOTE_PORT
+```
 # Web
 
 ## Enumeracion
