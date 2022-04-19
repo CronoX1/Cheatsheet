@@ -13,7 +13,7 @@ nmap -sU --top-ports 500 --open -T5 -v -n IP
 ```
 SC/TP Scan
 ```
-nmap -p- -sS --min-rate 5000 --open -vvv -n -Pn IP -sY
+nmap -sCV -p- -sS --min-rate 5000 --open -vvv -n -Pn IP -sY
 ```
 Host Discovery (ARP y DNS Resolution)
 ```
