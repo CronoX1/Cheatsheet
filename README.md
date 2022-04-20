@@ -16,10 +16,12 @@ nmap -sU --top-ports 500 --open -T5 -v -n IP
 nmap -sCV -p- -sS --min-rate 5000 --open -vvv -n -Pn IP -sY
 ```
 #### Host Discovery (ARP y DNS Resolution)
+
+##### Nmap
 ```
 nmap -sn network/address
 ```
-#### Host Discovery (ICMP scan)
+##### Python Script (ICMP scan)
 ```
 wget https://raw.githubusercontent.com/CronoX1/Host-Discovery/main/Host-Discovery.py
 ```
