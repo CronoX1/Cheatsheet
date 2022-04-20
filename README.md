@@ -228,6 +228,8 @@ Command=ToggleDesktop
 impacket-smbserver smbFolder $(pwd) -smb2support
 ```
 ## SMB
+
+Permission enumeration
 ```
 smbmap -H IP -u usuario -p password
 ```
