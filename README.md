@@ -3,15 +3,17 @@ Cosas copypaste
 
 # Red
 
-#### TCP/SYN Scan
+### Port Scanning
+
+#### TCP/SYN
 ```
 nmap -sCV -p- IP --min-rate 5000 -Pn -n --open -v -oN nmap.txt
 ```
-#### UDP top 500 Scan
+#### UDP top 500 
 ```
 nmap -sU --top-ports 500 --open -T5 -v -n IP
 ```
-#### SC/TP Scan
+#### SC/TP 
 ```
 nmap -sCV -p- -sS --min-rate 5000 --open -vvv -n -Pn IP -sY
 ```
@@ -25,7 +27,7 @@ nmap -sn network/address
 ```
 wget https://raw.githubusercontent.com/CronoX1/Host-Discovery/main/Host-Discovery.py
 ```
-#### Remote Port Tunneling
+### Remote Port Tunneling
 ```
 socat TCP-LISTEN:LISTENNING_PORT,fork sctp:REMOTE_IP:REMOTE_PORT
 ```
