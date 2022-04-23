@@ -244,6 +244,12 @@ Permisos SUID
 find / -user root -perm /4000
 ```
 
+Tareas programadas
+
+```
+cat /etc/crontab
+```
+
 ### Chisel
 
 Atacante
