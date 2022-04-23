@@ -241,7 +241,7 @@ python3 -m http.server PORT
 ```
 Permisos SUID
 ```
-find / -user root -perm /4000
+find / -user root -perm /4000 2>/dev/null
 ```
 
 Tareas programadas
