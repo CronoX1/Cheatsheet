@@ -7,7 +7,7 @@ Cosas copypaste
 
 #### TCP/SYN
 ```
-nmap -sCV -p- IP --min-rate 5000 -Pn -n --open -v -oN nmap.txt
+nmap -sS -sCV -p- IP --min-rate 5000 -Pn -n --open -v -oN nmap.txt
 ```
 #### UDP top 500 
 ```
