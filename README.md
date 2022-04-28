@@ -250,6 +250,10 @@ Permisos SUID
 ```
 find / -user root -perm /4000 2>/dev/null
 ```
+Ejecutar como root
+```
+sudo -l
+```
 
 Tareas programadas
 
