@@ -223,7 +223,10 @@ Buscar Archivos
 ```
 find / -name nombre_archivo 2>/dev/null
 ```
-
+Buscar archivos que tengan "x" palabra
+```
+grep -r -i "palabra_a_buscar" 2>/dev/null
+```
 ## Listeners
 
 Paquetes ICMP
