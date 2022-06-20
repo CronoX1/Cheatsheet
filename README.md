@@ -348,7 +348,7 @@ curl "http://IP/binario" -o binario
 
 Buscar archivo
 ```
-Get-Childitem C:\ -Include nombre_archivo -File -Recurse
+Get-Childitem C:\ -Include nombre_archivo -File -Recurse -erroraction 'silentlycontinue'
 ```
 
 ## Hashes
