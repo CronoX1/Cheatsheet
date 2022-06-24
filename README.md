@@ -390,7 +390,7 @@ sqsh -S <IP> -U <Username> -P <Password> -D <Database>
 ```
 Comandos útiles 
 
-[https://book.hacktricks.xyz/network-services-pentesting/pentesting-mssql-microsoft-sql-server]
+[Hacktricks MSSQL](https://book.hacktricks.xyz/network-services-pentesting/pentesting-mssql-microsoft-sql-server)
 
 ## Active Directory (AD)
 
