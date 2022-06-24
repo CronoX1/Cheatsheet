@@ -382,6 +382,15 @@ Enumeracion de directorios con usuario
 ```
 smbclient \\\\IP\\directorio -U 'username%password'
 ```
+## MSSQL (Microsoft SQL Server)
+
+Conectarse la BBDD con SQSH
+```
+sqsh -S <IP> -U <Username> -P <Password> -D <Database>
+```
+Comandos útiles 
+
+[https://book.hacktricks.xyz/network-services-pentesting/pentesting-mssql-microsoft-sql-server]
 
 ## Active Directory (AD)
 
