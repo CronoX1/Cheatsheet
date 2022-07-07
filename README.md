@@ -387,6 +387,10 @@ Enumeracion de directorios con usuario
 ```
 smbclient \\\\IP\\directorio -U 'username%password'
 ```
+Protocol negotiation failed: NT_STATUS_CONNECTION_DISCONNECTED
+```
+smbclient -L IP --option="client min protocol=NT1"
+```
 ## MSSQL (Microsoft SQL Server)
 
 Conectarse la BBDD con SQSH
