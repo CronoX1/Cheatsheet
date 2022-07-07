@@ -17,6 +17,11 @@ nmap -sU --top-ports 500 --open -T5 -v -n IP
 ```
 nmap -sCV -p- -sS --min-rate 5000 --open -vvv -n -Pn IP -sY
 ```
+#### Vuln
+```
+nmap -sV -p PORTS --script vuln IP -oN nmap
+```
+
 ### Host Discovery (ARP y DNS Resolution)
 
 #### Nmap
