@@ -32,7 +32,7 @@ nmap -sn network/address
 ```
 wget https://raw.githubusercontent.com/CronoX1/Host-Discovery/main/Host-Discovery.py
 ```
-#### Remote Port Tunneling
+#### Port Forwarding
 ```
 socat TCP-LISTEN:LISTENNING_PORT,fork sctp:REMOTE_IP:REMOTE_PORT
 ```
