@@ -34,12 +34,12 @@ wget https://raw.githubusercontent.com/CronoX1/Host-Discovery/main/Host-Discover
 ```
 #### Port Forwarding
 
-### Socat
+Socat
 
 ```
 socat TCP-LISTEN:LISTENNING_PORT,fork sctp:REMOTE_IP:REMOTE_PORT
 ```
-### Chisel
+Chisel
 
 Atacante
 ```
