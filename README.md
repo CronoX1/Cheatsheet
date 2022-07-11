@@ -417,6 +417,9 @@ Buscar archivo
 ```
 Get-Childitem C:\ -Include nombre_archivo -File -Recurse -erroraction 'silentlycontinue'
 ```
+```
+dir /r /s filename
+```
 
 ## Hashes
 
