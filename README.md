@@ -69,7 +69,7 @@ ssh -N -D ATTACKER_IP:ATTACKER_PORT victimuser@ip
 # add proxy here ...
 # meanwile
 # defaults set to "tor"
-socks4 ATTACKER_IP(localhost)_ATTACKER PORT
+socks4 ATTACKER_IP(localhost) ATTACKER_PORT
 ```
 
 #### Plink.exe 
