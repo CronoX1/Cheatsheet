@@ -13,3 +13,5 @@ Things we are planning to add to the Cheatsheet
 6. laps dumper
 
 7. freerdp
+
+8. XSS Payloads
