@@ -72,6 +72,8 @@ ssh -N -D ATTACKER_IP:ATTACKER_PORT victimuser@ip
 socks4 ATTACKER_IP(localhost)_ATTACKER PORT
 ```
 
+#### Plink.exe 
+
 ### Domain Zone Transfer (AXFR)
 ```
 dig @IP dominio axfr
