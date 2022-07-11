@@ -1,0 +1,13 @@
+# Things we are planning to add to the Cheatsheet
+
+1. Hacking Jenkins
+
+2. Hydra
+
+3. Hashes
+
+4. Custom Wordlists
+
+5. Bloodhound python script
+
+6. laps dumper
