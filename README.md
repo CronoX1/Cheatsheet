@@ -32,6 +32,18 @@ Windows Users
 ```
 snmpwalk -c public -v1 IP 1.3.6.1.4.1.77.1.2.25
 ```
+Windows Processes
+```
+snmpwalk -c public -v1 IP 1.3.6.1.2.1.25.4.2.1.2
+```
+Open TCP Ports
+```
+snmpwalk -c public -v1 IP 1.3.6.1.2.1.6.13.1.3
+```
+Installed Software
+```
+snmpwalk -c public -v1 IP 1.3.6.1.2.1.25.6.3.1.2
+```
 
 ### Host Discovery (ARP y DNS Resolution)
 
