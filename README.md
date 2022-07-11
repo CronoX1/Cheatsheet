@@ -63,7 +63,7 @@ Dynamic Port Forwarding (Pivoting)
 ```
 ssh -N -D ATTACKER_IP:ATTACKER_PORT victimuser@ip
 ```
-(Edit ProxyChains)
+(Edit Proxychains.conf)
 ```
 [ProxyList]
 # add proxy here ...
