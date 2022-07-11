@@ -22,6 +22,17 @@ nmap -sCV -p- -sS --min-rate 5000 --open -vvv -n -Pn IP -sY
 nmap -sV -p PORTS --script vuln IP -oN nmap
 ```
 
+### SNMP
+
+MIB Tree
+```
+snmpwalk -c public -v1(snmp version) -t 10 IP
+```
+Windows Users
+```
+snmpwalk -c public -v1 IP 1.3.6.1.4.1.77.1.2.25
+```
+
 ### Host Discovery (ARP y DNS Resolution)
 
 #### Nmap
