@@ -433,6 +433,10 @@ impacket-smbserver smbFolder $(pwd) -smb2support
 ```
 ## SMB
 
+User Enumeration
+```
+enum4linux IP
+```
 Permission enumeration
 ```
 smbmap -H IP -u usuario -p password
@@ -448,6 +452,10 @@ smbclient \\\\IP\\directorio -U 'username%password'
 Protocol negotiation failed: NT_STATUS_CONNECTION_DISCONNECTED
 ```
 smbclient -L IP --option="client min protocol=NT1"
+```
+SMB Enum Shares
+```
+nmap -p445 --script smb-enum-shares IP
 ```
 ## MSSQL (Microsoft SQL Server)
 
