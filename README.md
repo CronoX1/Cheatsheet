@@ -95,8 +95,6 @@ ssh -N -D ATTACKER_IP:ATTACKER_PORT victimuser@ip
 socks4 ATTACKER_IP(localhost) ATTACKER_PORT
 ```
 
-#### Plink.exe
-
 ### DNS
 
 #### dnsenum
