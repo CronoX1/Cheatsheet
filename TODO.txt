@@ -17,3 +17,5 @@ Things we are planning to add to the Cheatsheet
 8. XSS Payloads
 
 9. Update AD tools syntax
+
+10. File Transfers
