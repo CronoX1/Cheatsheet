@@ -426,6 +426,11 @@ chmod +x ovrflw
 ```
 gdb ./ovrflw
 ```
+Get the gef dependencies
+```
+pi import urllib.request as u, tempfile as t; g=t.NamedTemporaryFile(suffix='-gef.py'); open(g.name, 'wb+').write(u.urlopen('https://tinyurl.com/gef-main').read()); gdb.execute('source %s' % g.name)
+```
+
 Run the binary
 ```
 r 
