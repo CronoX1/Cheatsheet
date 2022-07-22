@@ -422,7 +422,30 @@ cat ovrflw | base64 -d | sponge ovrflw
 ```
 chmod +x ovrflw
 ```
-
+### Debugging the binary (gdb)
+```
+gdb ./ovrflw
+```
+Run the binary
+```
+r 
+```
+Watching the functions
+```
+info function
+```
+Break point on "main" function
+```
+b *main
+```
+Watching the registers
+```
+i r
+```
+Check protections (NX is DEP = Data Execution Prevention)
+```
+checksec
+```
 
 # Windows
 
