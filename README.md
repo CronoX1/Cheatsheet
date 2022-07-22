@@ -404,6 +404,26 @@ export TERM=xterm
 ```
 export SHELL=bash
 ```
+
+# Buffer Overflow
+
+## Linux
+
+### Taking the binary to the attacker machine
+
+On the victim machine
+```
+base64 -w 0 /usr/local/bin/ovrflw; echo
+```
+On the attacker machine
+```
+cat ovrflw | base64 -d | sponge ovrflw
+```
+```
+chmod +x ovrflw
+```
+
+
 # Windows
 
 ## Comandos útiles
