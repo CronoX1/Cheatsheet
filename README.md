@@ -432,6 +432,29 @@ export TERM=xterm
 export SHELL=bash
 ```
 
+# Bash
+
+## Eliminar palabras
+```
+tr -d 'palabra'
+```
+## Filtrar por una palabra
+```
+grep "palabra"
+```
+## Seleccionar la palabra a filtrar en la linea
+```
+awk '{print $lugar}'
+```
+## Filtrar una palabra que esté entre caracteres
+```
+grep -oP 'caracter.*?caracter'
+```
+## Eliminar palabras repetidas
+```
+uniq
+```
+
 # Buffer Overflow
 
 ## Linux [s4vitar - HTB October](https://youtu.be/3QZfUBVr-AA?t=4150)
@@ -677,12 +700,12 @@ Comandos útiles
 ### Kerberos user enumeration
 
 ```
-kerbrute -users userlist.txt -dc-ip IP -domain domain.local
+kerbrute userenum -d domain.local users.txt --dc IP
 ```
 ### ASREPRoasting
 
 ```
-GetNPUsers.py -dc-ip IP domain.local/user -outputfile hashes.asreproast
+GetNPUsers.py domain.local/user -usersfile users.txt
 ```
 ### Kerberoasting
 
