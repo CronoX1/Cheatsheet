@@ -2,20 +2,19 @@ Things we are planning to add to the Cheatsheet
 
 1. Hacking Jenkins
 
-2. Hydra
 
-3. Hashes
 
-4. Custom Wordlists
+2. Hashes
 
-5. Bloodhound python script
 
-6. laps dumper
+3. Bloodhound python script
 
-7. freerdp
+4. laps dumper
 
-8. XSS Payloads
+5. freerdp
 
-9. Update AD tools syntax
+6. XSS Payloads
 
-10. File Transfers
+7. Update AD tools syntax
+
+8. File Transfers
