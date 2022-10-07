@@ -470,6 +470,10 @@ grep -oP 'caracter.*?caracter'
 ```
 uniq
 ```
+## Separar palabras
+```
+tr -s ':' ' '
+```
 
 # Buffer Overflow
 
