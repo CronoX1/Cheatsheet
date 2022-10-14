@@ -947,7 +947,7 @@ Use the GT
 ```
 kerberos::ptt file.kirbi
 ```
-####Persistence
+#### Persistence
 
 Create a Administrator.ccache
 ```
