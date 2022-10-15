@@ -666,6 +666,11 @@ Get-Childitem C:\ -Include nombre_archivo -File -Recurse -erroraction 'silentlyc
 dir /r /s filename
 ```
 
+xFreeRDP
+```
+xfreerdp /u:USER /p:PASSWORD /v:IP /d:DOMAIN.local
+```
+
 ## Hashes
 
 Malicious SCF File
