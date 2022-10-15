@@ -6,8 +6,6 @@ Things we are planning to add to the Cheatsheet
 
 3. Bloodhound python script
 
-4. XSS Payloads
+4. File Transfers
 
-5. File Transfers
-
-6. GPP Attacks
+5. GPP Attacks
