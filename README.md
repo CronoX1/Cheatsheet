@@ -730,7 +730,7 @@ kerbrute userenum -d domain.local users.txt --dc IP
 ASREPRoasting
 
 ```
-GetNPUsers.py domain.local/user -usersfile users.txt
+GetNPUsers.py domain.local/ -usersfile users.txt
 ```
 Kerberoasting
 
