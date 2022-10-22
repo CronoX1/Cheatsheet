@@ -835,6 +835,27 @@ Descripcion usuarios with RPC
 for rid in $(rpcclient -U 'dominio.local\user%password' IP -c 'enumdomusers' | grep -oP '\[.*?\]' | grep -v '0x'| tr -d '[]'); do echo -e "\n[+] Para el RID $rid:\n";  rpcclient -U 'dominio.local\user%password' IP -c "queryuser $rid" | grep -E -i "user name|description" ;done
 ```
 
+### BloodHound
+```
+neo4j console
+```
+```
+bloodhound &>/dev/null &
+```
+```
+disown
+```
+#### Collection Method
+
+Remote collection (--dns-tcp with proxychains)
+```
+bloodhound-python -u USER -p PASSWORD -ns IP -d domain.local -c all
+```
+Local Collection [https://github.com/BloodHoundAD/BloodHound/tree/master/Collectors](SharpHound)
+```
+Invoke-BloodHound -CollectionMethod All
+```
+
 Read GMSA Password
 ```
 python3 gMSADumper.py -u 'user' -p 'password' -l IP -d domain.local 
