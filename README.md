@@ -890,7 +890,7 @@ Remote collection (--dns-tcp with proxychains)
 ```
 bloodhound-python -u USER -p PASSWORD -ns IP -d domain.local -c all
 ```
-Local Collection [https://github.com/BloodHoundAD/BloodHound/tree/master/Collectors](SharpHound)
+Local Collection [SharpHound](https://github.com/BloodHoundAD/BloodHound/tree/master/Collectors)
 ```
 Invoke-BloodHound -CollectionMethod All
 ```
