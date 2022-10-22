@@ -888,7 +888,7 @@ disown
 
 Remote collection (--dns-tcp with proxychains)
 ```
-bloodhound-python -u USER -p PASSWORD -ns IP -d domain.local -c All
+bloodhound-python -u USER -p PASSWORD -ns IP -d domain.local -c All --zip BloodHound.zip
 ```
 Local Collection [SharpHound](https://github.com/BloodHoundAD/BloodHound/tree/master/Collectors)
 ```
