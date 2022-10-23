@@ -665,7 +665,7 @@ while True:
     ret = call([full_path_to_binary, payload])
 ```
 # Jenkins
-## Test default creds
+## Test default creds (admin:password)
 
 Users
 ```
