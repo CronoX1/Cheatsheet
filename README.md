@@ -771,7 +771,16 @@ sqsh -S <IP> -U <Username> -P <Password> -D <Database>
 ```
 Enable xp_cmdshell
 ```
-SP_CONFIGURE "xp_cmdshell", 1
+sp_configure 'show advanced options', '1'
+```
+```
+RECONFIGURE
+```
+```
+sp_configure 'xp_cmdshell', '1'
+```
+```
+RECONFIGURE
 ```
 Comandos útiles 
 
