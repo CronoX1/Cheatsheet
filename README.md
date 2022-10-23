@@ -679,11 +679,18 @@ Passwords
 password
 Password
 admin
+administrator
 jenkins
 root
 Password1
 Password2
 Password!
+1234
+12345
+123456
+1234567890
+0987654321
+qwerty
 ```
 ## Reverse Shell (CLI)
 ```
