@@ -688,7 +688,7 @@ Password!
 0987654321
 qwerty
 ```
-## Reverse Shell (CLI)
+## Reverse Shell (Script Console)
 ```
 String host="IP";
 int port=PORT;
