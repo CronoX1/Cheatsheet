@@ -31,6 +31,11 @@ Breached accounts
 https://github.com/hmaverickadams/breach-parse
 ```
 
+## Subdomaing discovering
+
+```
+crt.sh
+```
 
 # Red
 
