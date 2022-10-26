@@ -1,6 +1,37 @@
 # Cheatsheet
 Cosas copypaste
 
+# OSINT
+
+## Email discovering
+
+Email addresses and patterns of a company
+```
+hunter.io
+```
+
+Email addresses, domains and URLs of a website
+```
+phonebook.cz
+```
+
+Verify emails
+```
+tools.emailhippo.com
+```
+
+## Breached emails
+
+Confirmation of breached emails
+```
+haveibeenpwned.com
+```
+Breached accounts
+```
+https://github.com/hmaverickadams/breach-parse
+```
+
+
 # Red
 
 ### Port Scanning
