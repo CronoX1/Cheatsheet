@@ -397,16 +397,21 @@ hydra -L users.txt -P passwords.txt domain.ext http-post-form "/login.php:userna
 
 # Linux
 
-## Comandos utiles
+## Usefull commands
 
-Buscar Archivos
+Search files
 ```
 find / -name nombre_archivo 2>/dev/null
 ```
-Buscar archivos que tengan "x" palabra
+Search file with an specific word
 ```
 grep -r -i "palabra_a_buscar" 2>/dev/null
 ```
+Check open ports
+```
+netstat -tulpn | grep LISTEN
+```
+
 ## Listeners
 
 Paquetes ICMP
