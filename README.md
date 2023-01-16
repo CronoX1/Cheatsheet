@@ -813,6 +813,10 @@ Enumeracion de directorios con usuario
 ```
 smbclient \\\\IP\\directorio -U 'username%password'
 ```
+Vuln Scanning
+```
+nmap --script smb-vuln*.nse -p 139,445 IP -Pn
+```
 Protocol negotiation failed: NT_STATUS_CONNECTION_DISCONNECTED
 ```
 smbclient -L IP --option="client min protocol=NT1"
