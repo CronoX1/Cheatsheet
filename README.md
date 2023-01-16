@@ -95,6 +95,23 @@ nmap -sn network/address
 ```
 wget https://raw.githubusercontent.com/CronoX1/Host-Discovery/main/Host-Discovery.py
 ```
+#### Bash Script (Host Discovery)
+```
+#!/bin/bash
+
+for i in $(seq 1 254); do
+	timeout 1 bash -c "ping -c 1 IP.$i" &>/dev/null && echo "[+] HOST IP.$i - ACTIVE" &
+done; wait
+```
+#### Bash Script (Port scanning)
+```
+#!/bin/bash
+
+for port in $(seq 1 65535); do
+        timeout 1 bash -c "echo '' > /dev/tcp/IP/$port" 2>/dev/null && echo "[+] Port $port - OPEN" &
+done; wait
+```
+
 ### Port Forwarding
 
 #### Socat
