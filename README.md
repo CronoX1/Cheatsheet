@@ -428,6 +428,10 @@ Check open ports
 ```
 netstat -tulpn | grep LISTEN
 ```
+Create a passwd password
+```
+mkpasswd --method=MD5  --stdin
+```
 
 ## Listeners
 
