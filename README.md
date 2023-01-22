@@ -1017,7 +1017,7 @@ Get-NetUser | select cn
 
 Users description
 ```
-Get-NetUser | select description
+Get-NetUser | select samaccountname, description
 ```
 
 Groups enum
@@ -1050,7 +1050,7 @@ Kerberos info (Golden Tickets)
 Computers enum
 
 ```
-Get-NetComputer | select name
+Get-NetComputer | select samaccountname
 ```
 
 Computers OS
@@ -1068,10 +1068,6 @@ Get GPOs
 Get-NetGPO | select displayname
 ```
 
-Usuarios del AD (ADWS)
-```
-Get-ADUser -Filter * | select name
-```
 ### Mimikatz
 
 Check privileges
