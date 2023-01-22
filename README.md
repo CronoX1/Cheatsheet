@@ -988,7 +988,7 @@ Local Collection [SharpHound](https://github.com/BloodHoundAD/BloodHound/tree/ma
 Invoke-BloodHound -CollectionMethod All
 ```
 
-### PowerView [PowerView](https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1)
+### [PowerView](https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1)
 
 Domain Info
 ```
