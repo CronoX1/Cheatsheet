@@ -68,11 +68,11 @@ MIB Tree
 ```
 snmpwalk -c public -v1(snmp version) -t 10 IP
 ```
-Windows Users
+Users
 ```
 snmpwalk -c public -v1 IP 1.3.6.1.4.1.77.1.2.25
 ```
-Windows Processes
+Processes
 ```
 snmpwalk -c public -v1 IP 1.3.6.1.2.1.25.4.2.1.2
 ```
