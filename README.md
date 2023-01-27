@@ -788,6 +788,10 @@ xFreeRDP
 ```
 xfreerdp /u:USER /p:PASSWORD /v:IP /d:DOMAIN.local
 ```
+Create a shre file through RDP
+```
+xfreerdp  /u:USERNAME /p:PASSWORD /v:IP /d:DOMAIN /drive:SHARE,/full/path/of/sharefolder
+```
 
 ## Hashes
 
