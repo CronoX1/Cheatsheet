@@ -5,3 +5,5 @@ Things we are planning to add to the Cheatsheet
 2. File Transfers
 
 3. GPP Attacks
+
+4. Wordpress
