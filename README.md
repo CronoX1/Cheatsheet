@@ -103,6 +103,10 @@ for i in $(seq 1 254); do
 	timeout 1 bash -c "ping -c 1 IP.$i" &>/dev/null && echo "[+] HOST IP.$i - ACTIVE" &
 done; wait
 ```
+#### CMD oneliner
+```
+(for /L %a IN (1,1,254) DO ping /n 1 /w 1 IP.%a) | find "Reply"
+```
 #### Bash Script (Port scanning)
 ```
 #!/bin/bash
