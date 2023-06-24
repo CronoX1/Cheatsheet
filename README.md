@@ -200,27 +200,27 @@ dig @IP dominio axfr
 
 #### Wfuzz
 
-Subdomaing Discovering
-
-```
-wfuzz -c --hc=404 -t 200 -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt -H "Host: FUZZ.dominio.ext" url
-```
 Directory Listing
 
 ```
 wfuzz -c --hc=404 -t 200 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt http://Domain-or-IP/FUZZ
 ```
-#### Gobuster
-
 Subdomaing Discovering
 
 ```
-gobuster vhost -u url -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt
+wfuzz -c --hc=404 -t 200 -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt -H "Host: FUZZ.dominio.ext" url
 ```
+#### Gobuster
+
 Directory Listing
 
 ```
 gobuster dir -e -u http://Domain-or-IP/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+```
+Subdomaing Discovering
+
+```
+gobuster vhost -u url -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt --append-domain
 ```
 
 ## XSS
